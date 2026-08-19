@@ -1,0 +1,384 @@
+/* ============================================================
+   ANIMATIONS & MICRO-INTERACTIONS
+   ============================================================ */
+
+/* ── KEYFRAME LIBRARY ── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(-24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes pulseRing {
+  0%   { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50%       { transform: scale(1.05); opacity: 1; }
+}
+
+@keyframes drawLine {
+  from { stroke-dashoffset: 1000; }
+  to   { stroke-dashoffset: 0; }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(200, 168, 75, 0.2); }
+  50%       { box-shadow: 0 0 40px rgba(200, 168, 75, 0.5), 0 0 80px rgba(200, 168, 75, 0.15); }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+@keyframes ripple {
+  0%   { transform: scale(0); opacity: 0.6; }
+  100% { transform: scale(4); opacity: 0; }
+}
+
+/* ── PAGE ENTRY ANIMATIONS ── */
+.animate-fade-in {
+  animation: fadeIn 0.6s var(--ease-out) both;
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.7s var(--ease-out) both;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s var(--ease-out) both;
+}
+
+.animate-slide-right {
+  animation: slideRight 0.6s var(--ease-out) both;
+}
+
+/* ── LOADING SKELETON ── */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(10, 36, 24, 0.06) 25%,
+    rgba(10, 36, 24, 0.12) 50%,
+    rgba(10, 36, 24, 0.06) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--r-md);
+}
+
+.skeleton-dark {
+  background: linear-gradient(
+    90deg,
+    rgba(168, 201, 106, 0.04) 25%,
+    rgba(168, 201, 106, 0.10) 50%,
+    rgba(168, 201, 106, 0.04) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--r-md);
+}
+
+/* ── HOVER LIFT ── */
+.hover-lift {
+  transition: transform var(--t-base) var(--ease-out),
+              box-shadow var(--t-base);
+}
+
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ── HOVER GLOW GOLD ── */
+.hover-glow-gold {
+  transition: box-shadow var(--t-base);
+}
+.hover-glow-gold:hover {
+  box-shadow: var(--shadow-gold);
+}
+
+/* ── PULSE RING (live indicator) ── */
+.pulse-live {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pulse-live::before {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  flex-shrink: 0;
+  animation: breathe 2s ease-in-out infinite;
+}
+
+.pulse-live::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  animation: pulseRing 1.5s ease-out infinite;
+}
+
+/* ── SPINNING LOADER ── */
+.spinner {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid rgba(200, 168, 75, 0.2);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  animation: spinSlow 0.8s linear infinite;
+  display: inline-block;
+}
+
+.spinner-sm {
+  width: 1rem;
+  height: 1rem;
+  border-width: 1.5px;
+}
+
+/* ── GRADIENT TEXT ── */
+.gradient-text-gold {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light), var(--gold-deep));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease infinite;
+}
+
+.gradient-text-forest {
+  background: linear-gradient(135deg, var(--forest), var(--moss));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-gaine {
+  background: linear-gradient(135deg, var(--gaine-accent), #c8d86a, var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%;
+  animation: gradientShift 5s ease infinite;
+}
+
+/* ── COUNTER ANIMATION ── */
+.counter-wrap {
+  animation: countUp 0.6s var(--ease-out) both;
+}
+
+/* ── BUTTON RIPPLE ── */
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-ripple .ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  width: 100px;
+  height: 100px;
+  margin-top: -50px;
+  margin-left: -50px;
+  animation: ripple 0.6s linear;
+  transform: scale(0);
+}
+
+/* ── GLOW CARD ── */
+.glow-card-gold {
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+/* ── TYPEWRITER ── */
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 2px solid var(--gold);
+  white-space: nowrap;
+  animation: typing 3s steps(40, end),
+             blink 0.75s step-end infinite;
+}
+
+/* ── SCROLL-DRIVEN PROGRESS ── */
+@supports (animation-timeline: scroll()) {
+  .scroll-progress {
+    position: fixed;
+    top: 4rem;
+    left: 0;
+    height: 2px;
+    background: linear-gradient(to right, var(--gold), var(--gold-light));
+    z-index: 199;
+    transform-origin: left;
+    animation: scaleX linear;
+    animation-timeline: scroll();
+    animation-range: 0% 100%;
+  }
+
+  @keyframes scaleX {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+  }
+}
+
+/* ── FLOAT ELEMENTS ── */
+.float-y {
+  animation: floatY 4s ease-in-out infinite;
+}
+
+.float-y-slow {
+  animation: floatY 7s ease-in-out infinite;
+}
+
+/* ── MICRO BOUNCE ── */
+.micro-bounce:active {
+  transform: scale(0.97);
+  transition: transform 0.1s;
+}
+
+/* ── ENTER TRANSITIONS (for modals, dropdowns) ── */
+.enter-fade {
+  animation: fadeIn var(--t-base) var(--ease-out);
+}
+
+.enter-scale {
+  animation: scaleIn var(--t-base) var(--ease-out);
+}
+
+.exit-fade {
+  animation: fadeIn var(--t-base) var(--ease-out) reverse;
+}
+
+/* ── WAVE DIVIDER ── */
+.wave-divider {
+  position: relative;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave-divider svg {
+  display: block;
+  width: 100%;
+}
+
+/* ── SCROLLBAR CUSTOM (global) ── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(10, 36, 24, 0.15);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(10, 36, 24, 0.25); }
+
+/* On dark backgrounds */
+.dark-scroll::-webkit-scrollbar-thumb { background: rgba(168, 201, 106, 0.2); }
+.dark-scroll::-webkit-scrollbar-thumb:hover { background: rgba(168, 201, 106, 0.35); }
+
+/* ── SELECTION COLOR ── */
+::selection {
+  background: rgba(200, 168, 75, 0.25);
+  color: var(--forest);
+}
+
+/* ── FOCUS RING ── */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* ── KINETIC WORD REVEAL KEYFRAMES ── */
+@keyframes wordRevealUp {
+  from {
+    opacity: 0;
+    transform: translateY(110%) rotateX(-45deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+
+.animate-word-reveal {
+  animation: wordRevealUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ── CURSOR AMBIENT PULSE ── */
+@keyframes cursorAmbientPulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+  50% { transform: translate(-50%, -50%) scale(1.15); opacity: 1; }
+}
+
+.cursor-glow-pulse {
+  animation: cursorAmbientPulse 4s ease-in-out infinite;
+}
+
+/* ── REDUCED MOTION ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

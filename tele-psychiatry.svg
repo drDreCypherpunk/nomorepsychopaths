@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-grad-tele" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070c1b" />
+      <stop offset="50%" stop-color="#0d172e" />
+      <stop offset="100%" stop-color="#132247" />
+    </linearGradient>
+
+    <!-- Glowing Filters -->
+    <filter id="glow-cyan-tele" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="glow-emerald" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Linear HUD Gradients -->
+    <linearGradient id="ecg-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="50%" stop-color="#00f2fe" />
+      <stop offset="100%" stop-color="#38ef7d" />
+    </linearGradient>
+
+    <linearGradient id="hud-ring-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="100%" stop-color="#7928ca" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bg-grad-tele)" />
+
+  <!-- High-Tech Blueprint Grid -->
+  <g opacity="0.08" stroke="#00f2fe" stroke-width="1">
+    <path d="M0 50 H800 M0 100 H800 M0 150 H800 M0 200 H800 M0 250 H800 M0 300 H800 M0 350 H800 M0 400 H800" />
+    <path d="M100 0 V450 M200 0 V450 M300 0 V450 M400 0 V450 M500 0 V450 M600 0 V450 M700 0 V450" />
+  </g>
+
+  <!-- Central Tele-Psychiatry HUD Monitor Frame -->
+  <rect x="250" y="80" width="300" height="280" rx="16" 
+        fill="#070c1b" stroke="url(#hud-ring-grad)" stroke-width="2" filter="url(#glow-cyan-tele)" opacity="0.9"/>
+  
+  <!-- Outer Corner HUD Markers -->
+  <path d="M 235 95 L 235 80 L 250 80" stroke="#00f2fe" stroke-width="3" fill="none"/>
+  <path d="M 565 95 L 565 80 L 550 80" stroke="#00f2fe" stroke-width="3" fill="none"/>
+  <path d="M 235 345 L 235 360 L 250 360" stroke="#00f2fe" stroke-width="3" fill="none"/>
+  <path d="M 565 345 L 565 360 L 550 360" stroke="#00f2fe" stroke-width="3" fill="none"/>
+
+  <!-- Holographic Brain Scan Graphic inside HUD Frame -->
+  <g transform="translate(400, 210)" filter="url(#glow-cyan-tele)">
+    <!-- Rotating Scanning Target Rings -->
+    <circle cx="0" cy="0" r="95" fill="none" stroke="#7928ca" stroke-width="1.5" stroke-dasharray="10,6"/>
+    <circle cx="0" cy="0" r="80" fill="none" stroke="#00f2fe" stroke-width="1" stroke-dasharray="4,4"/>
+    <circle cx="0" cy="0" r="65" fill="none" stroke="#10b981" stroke-width="1.5" stroke-dasharray="12,4"/>
+
+    <!-- Brain Hologram Contour -->
+    <path d="M -50 0 C -50 -40, -20 -60, 0 -60 C 20 -60, 50 -40, 50 0 C 50 40, 20 50, 0 50 C -20 50, -50 40, -50 0 Z" 
+          fill="#0d172e" stroke="#00f2fe" stroke-width="2"/>
+    <path d="M -30 -10 Q 0 -30 30 -10 T 0 30 Z" fill="none" stroke="#7928ca" stroke-width="1.5"/>
+
+    <!-- Crosshair Lines -->
+    <line x1="-110" y1="0" x2="110" y2="0" stroke="#00f2fe" stroke-width="1" opacity="0.4"/>
+    <line x1="0" y1="-110" x2="0" y2="110" stroke="#00f2fe" stroke-width="1" opacity="0.4"/>
+    
+    <!-- Target Lock Point -->
+    <circle cx="0" cy="-10" r="6" fill="#10b981" />
+  </g>
+
+  <!-- Left Sidebar: Cardiac / Vital Signs Telemetry (12-Lead ECG) -->
+  <g transform="translate(30, 90)">
+    <rect x="0" y="0" width="190" height="260" rx="10" fill="#0d172e" stroke="#10b981" stroke-width="1.5" opacity="0.95"/>
+    <text x="15" y="25" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#10b981" letter-spacing="1">CARDIAC TELEMETRY</text>
+    
+    <!-- ECG Rhythm Line -->
+    <path d="M 15 70 L 45 70 L 52 50 L 60 95 L 68 35 L 76 80 L 82 70 L 175 70" 
+          fill="none" stroke="url(#ecg-grad)" stroke-width="2" filter="url(#glow-emerald)"/>
+    
+    <!-- Vital Stats -->
+    <text x="15" y="115" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94a3b8">HEART RATE: <tspan fill="#38ef7d" font-weight="700">68 BPM</tspan></text>
+    <text x="15" y="140" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94a3b8">QTc INTERVAL: <tspan fill="#00f2fe" font-weight="700">415 ms</tspan></text>
+    <text x="15" y="165" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94a3b8">SAFETY STATUS: <tspan fill="#10b981" font-weight="700">SAFE</tspan></text>
+
+    <!-- Status Gauge Bar -->
+    <rect x="15" y="185" width="160" height="8" rx="4" fill="#070c1b"/>
+    <rect x="15" y="185" width="110" height="8" rx="4" fill="url(#ecg-grad)"/>
+
+    <text x="15" y="215" font-family="'Space Grotesk', sans-serif" font-size="10" fill="#64748b">24/7 CARDIOLOGIST MONITOR</text>
+    <text x="15" y="235" font-family="'Space Grotesk', sans-serif" font-size="10" fill="#38ef7d">✓ PROTOCOL COMPLIANT</text>
+  </g>
+
+  <!-- Right Sidebar: Tele-Psychiatry Protocol & EEG Spectrum -->
+  <g transform="translate(580, 90)">
+    <rect x="0" y="0" width="190" height="260" rx="10" fill="#0d172e" stroke="#7928ca" stroke-width="1.5" opacity="0.95"/>
+    <text x="15" y="25" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#00f2fe" letter-spacing="1">CLINICAL DOSING</text>
+    
+    <!-- Dosing Bar Chart -->
+    <g transform="translate(15, 45)">
+      <rect x="0" y="40" width="16" height="40" fill="#7928ca" rx="2"/>
+      <rect x="25" y="20" width="16" height="60" fill="#00f2fe" rx="2"/>
+      <rect x="50" y="10" width="16" height="70" fill="#38ef7d" rx="2"/>
+      <rect x="75" y="30" width="16" height="50" fill="#00f2fe" rx="2"/>
+      <rect x="100" y="50" width="16" height="30" fill="#7928ca" rx="2"/>
+    </g>
+
+    <!-- Dosing Stats -->
+    <text x="15" y="155" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94a3b8">NORIBOGAINE: <tspan fill="#00f2fe" font-weight="700">12.4 mg/kg</tspan></text>
+    <text x="15" y="178" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94a3b8">SUPPLY TRACK: <tspan fill="#38ef7d">DECREE 0239</tspan></text>
+
+    <!-- Tele-Session Status Badge -->
+    <rect x="15" y="195" width="160" height="38" rx="6" fill="#070c1b" stroke="#00f2fe" stroke-width="1"/>
+    <text x="25" y="218" font-family="'Space Grotesk', sans-serif" font-size="10" font-weight="700" fill="#00f2fe">ENCRYPTED HD LINK</text>
+  </g>
+
+  <!-- Top Header & Footer Telemetry Bar -->
+  <g font-family="'Space Grotesk', 'JetBrains Mono', sans-serif" fill="#94a3b8">
+    <text x="30" y="45" font-size="14" font-weight="700" fill="#00f2fe" letter-spacing="2">HIGH-TECH TELE-PSYCHIATRY // CLINICAL FACILITY HUB</text>
+    <text x="30" y="65" font-size="11" fill="#64748b" letter-spacing="1">REAL-TIME CLINICAL MONITORING &amp; REMOTELY GUIDED MEDICAL PROTOCOLS</text>
+
+    <!-- Bottom Telemetry Bar -->
+    <rect x="250" y="380" width="300" height="36" rx="8" fill="#070c1b" stroke="#00f2fe" stroke-width="1"/>
+    <circle cx="270" cy="398" r="5" fill="#38ef7d"/>
+    <text x="285" y="402" font-size="10" font-weight="600" fill="#f8fafc" letter-spacing="1">FACILITY NODE: LIBREVILLE CLINICAL CENTER 01</text>
+  </g>
+</svg>

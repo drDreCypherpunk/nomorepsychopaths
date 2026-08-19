@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="No More Psychopaths & The Integrity Protocol — A Permissionless, Trustless, Decentralized Public Registry & Anti-Capture Governance Protocol." />
+  <title>No More Psychopaths — The Integrity Protocol | Anti-Capture Governance Layer</title>
+  
+  <!-- Fonts: Google Sans & Jost -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Jost:ital,wght@0,100..900;1,100..900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js" defer></script>
+</head>
+<body>
+
+<!-- Scroll Progress Bar -->
+<div class="scroll-progress-bar" id="scroll-progress"></div>
+
+<!-- ═══════════════════════════════════════════
+     SITE HEADER & NAVIGATION
+═══════════════════════════════════════════ -->
+<header class="site-header" id="site-header">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="No More Psychopaths Home">
+      <div class="nav-logo-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+      </div>
+      <span class="nav-logo-text">NO MORE PSYCHOPATHS<span>.ORG</span></span>
+      <span class="nav-badge">INTEGRITY PROTOCOL</span>
+    </a>
+
+    <!-- Desktop Nav Links -->
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html" class="active">Overview</a>
+      <a href="#reframe">The Reframe</a>
+      <a href="#pillars">4 Pillars</a>
+      <a href="#not-building">Guarantees</a>
+      <a href="#onboarding">Wizard</a>
+      <a href="pages/dao.html">Autonomous NGO</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Desktop CTA & Mobile Hamburger -->
+    <div style="display:flex;align-items:center;gap:0.75rem;">
+      <a href="#contact" class="btn btn-primary btn-sm hide-mobile" style="display:inline-flex;">
+        Join Movement
+      </a>
+      <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-drawer-overlay"></div>
+<aside class="mobile-drawer" aria-label="Mobile navigation drawer">
+  <div>
+    <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:2rem;">
+      <div class="nav-logo-icon" style="width:2rem;height:2rem;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <span style="font-family:var(--font-heading);font-weight:700;font-size:1.05rem;color:var(--text-main);">NO MORE PSYCHOPATHS</span>
+    </div>
+
+    <ul class="mobile-nav-menu">
+      <li><a href="index.html" class="active"><span>Overview</span> <span>→</span></a></li>
+      <li><a href="#reframe"><span>The Reframe</span> <span>→</span></a></li>
+      <li><a href="#pillars"><span>4 Pillars</span> <span>→</span></a></li>
+      <li><a href="#not-building"><span>Guarantees</span> <span>→</span></a></li>
+      <li><a href="#onboarding"><span>Preset Wizard</span> <span>→</span></a></li>
+      <li><a href="pages/dao.html"><span>Autonomous NGO</span> <span>→</span></a></li>
+      <li><a href="#contact"><span>Contact Us</span> <span>→</span></a></li>
+    </ul>
+  </div>
+
+  <div>
+    <a href="mailto:no-more-psychopaths@protonmail.com" class="btn btn-primary" style="width:100%;margin-bottom:0.75rem;">
+      ✉ Contact Protocol Team
+    </a>
+    <div style="font-size:0.75rem;color:var(--text-muted);text-align:center;">
+      Tokenless · Permissionless · Pure Code Execution
+    </div>
+  </div>
+</aside>
+
+<!-- Mobile Floating Quick Action Pill (iPhone 16/17 & Pixel Flagship) -->
+<nav class="mobile-quick-bar" aria-label="Quick mobile actions">
+  <a href="#pillars" class="mobile-quick-btn">
+    <span>🏛️</span> 4 Pillars
+  </a>
+  <a href="pages/dao.html" class="mobile-quick-btn">
+    <span>⚙️</span> NGO Model
+  </a>
+  <a href="#contact" class="mobile-quick-btn primary">
+    <span>✉</span> Join
+  </a>
+</nav>
+
+<main>
+
+  <!-- ═══════════════════════════════════════════
+       HERO SECTION
+  ═══════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <canvas id="neural-canvas" class="hero-neural-canvas"></canvas>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span>🔒</span> A Permissionless, Trustless, Decentralized Public Registry &amp; Anti-Capture Layer
+      </div>
+
+      <h1 class="hero-title">
+        Solve The Psychopath Problem — <span class="highlight">Forever.</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        An opt-in, off-the-shelf governance layer that any organization or government can deploy to resist capture by manipulative, low-accountability actors. <strong>We harden institutions against harm and open voluntary doors for people.</strong>
+      </p>
+
+      <div class="hero-actions">
+        <a href="#pillars" class="btn btn-primary btn-lg">
+          Explore The 4 Pillars
+        </a>
+        <a href="pages/dao.html" class="btn btn-outline btn-lg">
+          Autonomous NGO Architecture
+        </a>
+        <a href="#reframe" class="btn btn-outline btn-lg">
+          Read The Reframe
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       LIVE PROTOCOL TICKER
+  ═══════════════════════════════════════════ -->
+  <section class="stats-bar" aria-label="Protocol axioms">
+    <div class="stats-bar-inner">
+      <div class="stats-bar-item"><span class="dot"></span>Core Axiom: <strong>No Token → No Shareholders → No Voting → No Gatekeepers</strong></div>
+      <div class="stats-bar-item"><span class="dot"></span>Mechanism: <strong>Predetermined Rules Enforced by Code</strong></div>
+      <div class="stats-bar-item"><span class="dot"></span>Privacy: <strong>Zero-Knowledge Proofs (Circom / Noir)</strong></div>
+      <div class="stats-bar-item"><span class="dot"></span>Compassion Arm: <strong>Gabon Sacred Wood (Iboga) Restorative Access</strong></div>
+      <div class="stats-bar-item"><span class="dot"></span>Design Goal: <strong>Institutional Anti-Capture Tooling</strong></div>
+      <div class="stats-bar-item"><span class="dot"></span>Access: <strong>100% Free, Public, &amp; Open-Source</strong></div>
+      <!-- Duplicate for infinite seamless scroll -->
+      <div class="stats-bar-item"><span class="dot"></span>Core Axiom: <strong>No Token → No Shareholders → No Voting → No Gatekeepers</strong></div>
+      <div class="stats-bar-item"><span class="dot"></span>Mechanism: <strong>Predetermined Rules Enforced by Code</strong></div>
+      <div class="stats-bar-item"><span class="dot"></span>Privacy: <strong>Zero-Knowledge Proofs (Circom / Noir)</strong></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 1: THE REFRAME
+  ═══════════════════════════════════════════ -->
+  <section class="section" id="reframe">
+    <div class="container">
+      <div style="text-align:center; max-width:50rem; margin-inline:auto; margin-bottom:3.5rem;">
+        <span class="section-label">Read This First</span>
+        <h2 class="section-title">The Reframe: Disease vs. The Cure</h2>
+        <p class="section-desc" style="margin-inline:auto;">
+          The original instinct was right about the disease and wrong about the cure. Here is how we build the immune system our species forgot to evolve.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <!-- The Disease -->
+        <div class="card">
+          <div style="width:3rem;height:3rem;background:var(--pink-light);border-radius:var(--r-md);display:grid;place-items:center;color:var(--coral-alert);margin-bottom:1.25rem;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <div style="font-family:var(--font-mono);font-size:0.75rem;color:var(--coral-alert);margin-bottom:0.5rem;">[ THE PROBLEM ]</div>
+          <h3>The Disease Is Real</h3>
+          <p style="font-size:0.95rem;margin-top:0.75rem;">
+            Manipulative, low-empathy, high-charm actors disproportionately climb into positions of power and hollow out the institutions they capture. From broken startups to fallen empires, this pattern repeats continuously throughout history.
+          </p>
+        </div>
+
+        <!-- The Failed Cure -->
+        <div class="card">
+          <div style="width:3rem;height:3rem;background:var(--pink-light);border-radius:var(--r-md);display:grid;place-items:center;color:var(--text-muted);margin-bottom:1.25rem;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+          </div>
+          <div style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text-muted);margin-bottom:0.5rem;">[ THE FAILED PATH ]</div>
+          <h3>The Cure That Doesn't Work</h3>
+          <p style="font-size:0.95rem;margin-top:0.75rem;">
+            Scanning brains and publishing a registry of "psychopaths." There is no validated single neuroimaging classification test for individuals. A mandatory-scan registry is a rights-stripping list of "defective" people. <strong>We explicitly do not build this.</strong>
+          </p>
+        </div>
+
+        <!-- The Working Cure -->
+        <div class="card" style="border-color:var(--pink-burnt);box-shadow:0 8px 30px rgba(200,125,123,0.15);">
+          <div style="width:3rem;height:3rem;background:var(--pink-light);border-radius:var(--r-md);display:grid;place-items:center;color:var(--pink-deep);margin-bottom:1.25rem;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 11 12 14 22 4"/></svg>
+          </div>
+          <div style="font-family:var(--font-mono);font-size:0.75rem;color:var(--pink-deep);margin-bottom:0.5rem;">[ THE REAL PRODUCT ]</div>
+          <h3>The Cure That Works</h3>
+          <p style="font-size:0.95rem;margin-top:0.75rem;">
+            You can't reliably measure the person, but <strong>you can make the institution legible and hard to capture</strong>. Bad actors thrive on opacity, unaccountable power, and single points of control. Remove those and you remove their ecological niche.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 2: THE 4 INTEGRATED PILLARS
+  ═══════════════════════════════════════════ -->
+  <section class="section" id="pillars" style="background:var(--bg-surface);">
+    <div class="container">
+      <div style="margin-bottom:3.5rem;">
+        <span class="section-label">Modular Architecture</span>
+        <h2 class="section-title">The Four Integrated Pillars</h2>
+        <p class="section-desc">
+          A modular, opt-in governance protocol that any DAO, cooperative, agency, or government body can switch on with off-the-shelf settings.
+        </p>
+      </div>
+
+      <div class="grid-2" style="gap:2.5rem;">
+        <!-- Pillar 1: Anti-Capture Governance Tooling -->
+        <div class="card pillar-card">
+          <div class="card-media">
+            <img src="assets/images/anti-capture.jpg" alt="Anti-Capture Governance Tooling" loading="lazy">
+            <div class="card-badge">PILLAR 01 · THE CORE</div>
+          </div>
+          <h3>1. Anti-Capture Governance Tooling</h3>
+          <p style="font-size:0.95rem;margin-top:0.5rem;">
+            The on-chain and hybrid machinery that makes power hard to concentrate and easy to check.
+          </p>
+          <ul class="feature-list">
+            <li><span class="check">✓</span> <strong>Separation of Powers Primitives:</strong> Proposal, treasury, and validator roles that can never be held by one entity.</li>
+            <li><span class="check">✓</span> <strong>Time-Locks &amp; Quorum Floors:</strong> Forced sunset clauses on all delegated authority.</li>
+            <li><span class="check">✓</span> <strong>Rage-Quit Exit Rights:</strong> Minorities can leave with their stake rather than be trapped by captured leadership.</li>
+            <li><span class="check">✓</span> <strong>Capture-Detection Analytics:</strong> Real-time alerts on voting concentration, collusion patterns, and revolving-door conflicts (behavioral &amp; structural, never neurology).</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 2: Transparency & Disclosure Layer -->
+        <div class="card pillar-card">
+          <div class="card-media">
+            <img src="assets/images/zk-disclosure.jpg" alt="Zero Knowledge Transparency & Disclosure" loading="lazy">
+            <div class="card-badge">PILLAR 02 · PRIVACY &amp; PROOF</div>
+          </div>
+          <h3>2. Transparency &amp; Disclosure Layer</h3>
+          <p style="font-size:0.95rem;margin-top:0.5rem;">
+            The data that lets a community judge a leader on their verified record, not their charismatic charm.
+          </p>
+          <ul class="feature-list">
+            <li><span class="check">✓</span> <strong>Standardized Conflict Disclosures:</strong> Mandatory financial interest filings for anyone holding power or receiving funds.</li>
+            <li><span class="check">✓</span> <strong>Verifiable Decision History:</strong> Cryptographically logged treasury flows and voting records.</li>
+            <li><span class="check">✓</span> <strong>Portable Accountability Records:</strong> A candidate’s authentic track record, not a brain badge.</li>
+            <li><span class="check">✓</span> <strong>Selective Zero-Knowledge Proofs:</strong> Prove "no undisclosed conflict" with Circom/Noir zk-SNARKs without dumping raw personal financials.</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 3: Institutional Design Framework -->
+        <div class="card pillar-card">
+          <div class="card-media">
+            <img src="assets/images/integrity-hero.jpg" alt="Institutional Design Framework" loading="lazy">
+            <div class="card-badge">PILLAR 03 · METHODOLOGY</div>
+          </div>
+          <h3>3. Institutional-Design Framework</h3>
+          <p style="font-size:0.95rem;margin-top:0.5rem;">
+            The playbook and methodology layer, ensuring organizations don't just deploy code, but adopt hardened immune architecture.
+          </p>
+          <ul class="feature-list">
+            <li><span class="check">✓</span> <strong>Reference Constitutions:</strong> Governance templates pre-hardened against known social engineering &amp; capture vectors.</li>
+            <li><span class="check">✓</span> <strong>Threat-Modeling Toolkit:</strong> <em>"How would a bad actor take this over?"</em> audits baked directly into onboarding.</li>
+            <li><span class="check">✓</span> <strong>Audited Configuration Presets:</strong> Tailored packages for DAOs, Municipalities, Grant Programs, and Ministries.</li>
+            <li><span class="check">✓</span> <strong>Frictionless Deployment:</strong> Spin up contracts and dashboards with sane, audited defaults in an afternoon.</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 4: Voluntary Reintegration & Iboga Access -->
+        <div class="card pillar-card">
+          <div class="card-media">
+            <img src="assets/images/sacred-wood.jpg" alt="Sacred Wood Iboga Voluntary Reintegration" loading="lazy">
+            <div class="card-badge">PILLAR 04 · THE COMPASSION ARM</div>
+          </div>
+          <h3>4. Voluntary Reintegration &amp; Iboga Access</h3>
+          <p style="font-size:0.95rem;margin-top:0.5rem;">
+            Where the original humanitarian ethic lives. We do not permanently brand or exclude people.
+          </p>
+          <ul class="feature-list">
+            <li><span class="check">✓</span> <strong>Voluntary Path for Healing:</strong> Individuals who have caused harm and want to change receive a structured, supportive recovery route.</li>
+            <li><span class="check">✓</span> <strong>Gabon Sacred Wood Tradition:</strong> Medically supervised iboga/ibogaine treatments anchored in Gabon's authentic heritage.</li>
+            <li><span class="check">✓</span> <strong>Restorative Justice:</strong> Reintegration frameworks focused on repair, empathy building, and accountability rather than permanent ostracization.</li>
+            <li><span class="check">✓</span> <strong>Guiding Ethic:</strong> <em>We harden systems against harm and we open doors for people, at the same time.</em></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 3: WHAT WE ARE EXPLICITLY NOT BUILDING
+  ═══════════════════════════════════════════ -->
+  <section class="section" id="not-building">
+    <div class="container">
+      <div class="disclaimer-box">
+        <div class="disclaimer-title">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--pink-deep)" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <strong>What We Are Explicitly NOT Building</strong>
+        </div>
+        <p style="color:var(--text-body);font-size:1.05rem;max-width:48rem;">
+          Stating this up front is our primary credibility asset, not a disclaimer. Legitimacy comes from voluntary adoption and verifiable accountability, never coercion.
+        </p>
+
+        <div class="not-list">
+          <div class="not-item">
+            <span class="x-mark">✕</span>
+            <div><strong>No Mandatory Scans:</strong> Zero biometric coercion or forced neuro-testing of citizens or workers.</div>
+          </div>
+          <div class="not-item">
+            <span class="x-mark">✕</span>
+            <div><strong>No Defect Registry:</strong> No registry of individuals labeled by a claimed defect or permanent blacklists.</div>
+          </div>
+          <div class="not-item">
+            <span class="x-mark">✕</span>
+            <div><strong>No Unfalsifiable Claims:</strong> No claim of a validated, definitive "psychopathy brain signature" for individuals.</div>
+          </div>
+          <div class="not-item">
+            <span class="x-mark">✕</span>
+            <div><strong>No Surveillance Ledger:</strong> No biometric gate, no central surveillance authority, no sellable user data.</div>
+          </div>
+        </div>
+
+        <div style="margin-top:1.75rem;padding:1rem 1.25rem;background:var(--pink-light);border-radius:var(--r-md);border:1px solid rgba(200,125,123,0.3);font-size:0.95rem;color:var(--rose-mauve);">
+          <strong>The Value is Compassion. The Method is Good Design.</strong> We harden institutions. We make power accountable. We open voluntary doors for people who want to change.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 4: OFF-THE-SHELF ONBOARDING WIZARD
+  ═══════════════════════════════════════════ -->
+  <section class="section" id="onboarding" style="background:var(--bg-surface);">
+    <div class="container">
+      <div style="text-align:center; max-width:48rem; margin-inline:auto; margin-bottom:2.5rem;">
+        <span class="section-label">Frictionless Adoption</span>
+        <h2 class="section-title">Deploy in an Afternoon</h2>
+        <p class="section-desc" style="margin-inline:auto;">
+          Select your organization type to preview pre-hardened smart contract defaults, disclosure rules, and rage-quit parameters.
+        </p>
+      </div>
+
+      <div class="wizard-box">
+        <div class="preset-tabs" id="preset-tabs">
+          <button class="preset-tab active" onclick="switchPreset('dao', this)">Decentralized Autonomous NGO</button>
+          <button class="preset-tab" onclick="switchPreset('municipality', this)">Municipality / Local Council</button>
+          <button class="preset-tab" onclick="switchPreset('grant', this)">Grant Program / Foundation</button>
+          <button class="preset-tab" onclick="switchPreset('coop', this)">Worker Cooperative</button>
+          <button class="preset-tab" onclick="switchPreset('ministry', this)">National Agency / Ministry</button>
+        </div>
+
+        <div id="preset-content" class="card" style="background:#FFFFFF;border:1px solid var(--border-warm);">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem;">
+            <div>
+              <span id="preset-badge" class="section-label" style="margin-bottom:0.35rem;">PRESET: TOKENLESS NGO</span>
+              <h3 id="preset-title" style="margin-top:0.25rem;">Tokenless, Permissionless Autonomous NGO</h3>
+            </div>
+            <a href="pages/dao.html" class="btn btn-primary btn-sm">Inspect Full Architecture →</a>
+          </div>
+
+          <div class="grid-3" style="gap:1.25rem;" id="preset-specs">
+            <div style="background:var(--bg-surface);padding:1.25rem;border-radius:var(--r-md);border:1px solid var(--border-warm);">
+              <div style="font-size:0.75rem;font-family:var(--font-mono);color:var(--pink-deep);margin-bottom:0.25rem;">POWER SEPARATION</div>
+              <strong id="spec-power">Tri-cameral smart contract separation</strong>
+              <p id="spec-power-desc" style="font-size:0.875rem;color:var(--text-muted);margin-top:0.35rem;">Proposal, treasury, and execution roles strictly separated. No single admin key.</p>
+            </div>
+            <div style="background:var(--bg-surface);padding:1.25rem;border-radius:var(--r-md);border:1px solid var(--border-warm);">
+              <div style="font-size:0.75rem;font-family:var(--font-mono);color:var(--pink-deep);margin-bottom:0.25rem;">DISCLOSURE LAYER</div>
+              <strong id="spec-disclosure">Zero-Knowledge Financial Proofs</strong>
+              <p id="spec-disclosure-desc" style="font-size:0.875rem;color:var(--text-muted);margin-top:0.35rem;">Automated conflict verification using zk-SNARKs without revealing private balances.</p>
+            </div>
+            <div style="background:var(--bg-surface);padding:1.25rem;border-radius:var(--r-md);border:1px solid var(--border-warm);">
+              <div style="font-size:0.75rem;font-family:var(--font-mono);color:var(--pink-deep);margin-bottom:0.25rem;">EXIT RIGHTS</div>
+              <strong id="spec-exit">Instant Unconditional Rage-Quit</strong>
+              <p id="spec-exit-desc" style="font-size:0.875rem;color:var(--text-muted);margin-top:0.35rem;">Sub-collectives can fork or exit with proportional capital if capturing patterns emerge.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 5: REALISTIC TECH STACK & ROADMAP
+  ═══════════════════════════════════════════ -->
+  <section class="section" id="roadmap">
+    <div class="container">
+      <div style="text-align:center; max-width:48rem; margin-inline:auto; margin-bottom:3.5rem;">
+        <span class="section-label">Engineering &amp; Milestones</span>
+        <h2 class="section-title">Realistic Tech Stack &amp; Roadmap</h2>
+        <p class="section-desc" style="margin-inline:auto;">
+          Built on proven, censorship-resistant infrastructure designed to outlive its creators.
+        </p>
+      </div>
+
+      <div class="grid-2" style="gap:2.5rem;margin-bottom:3.5rem;">
+        <!-- Stack Specifications -->
+        <div class="card">
+          <h3 style="margin-bottom:1.25rem;">The Protocol Stack</h3>
+          <ul class="feature-list" style="margin-top:0;">
+            <li><span class="check">▸</span> <strong>Frontend:</strong> React dApp / Progressive Web App (Offline-first, IPFS hosted).</li>
+            <li><span class="check">▸</span> <strong>Execution Layer:</strong> Ethereum L2 (Arbitrum / Polygon) for sub-cent transaction costs with chain-agnostic smart contracts.</li>
+            <li><span class="check">▸</span> <strong>Smart Contracts:</strong> Formally verified Solidity primitives with audited time-locks and multi-sig fail-safes.</li>
+            <li><span class="check">▸</span> <strong>Storage:</strong> Content-addressed IPFS storage for immutable disclosure records and verifiable constitutions.</li>
+            <li><span class="check">▸</span> <strong>Privacy:</strong> Circom and Noir zk-proof toolkits for selective disclosures.</li>
+          </ul>
+        </div>
+
+        <!-- Roadmap Timeline -->
+        <div class="card">
+          <h3 style="margin-bottom:1.25rem;">Phased Rollout</h3>
+          <div style="display:flex;flex-direction:column;gap:1.25rem;">
+            <div style="padding:1rem;background:var(--bg-surface);border-radius:var(--r-md);border-left:3px solid var(--pink-burnt);">
+              <div style="font-family:var(--font-mono);font-size:0.75rem;color:var(--pink-deep);font-weight:600;">2026 · PHASE 1</div>
+              <strong>MVP &amp; Pilot Deployment</strong>
+              <p style="font-size:0.875rem;color:var(--text-muted);margin-top:0.25rem;">Governance-template engine, zk-disclosure layer, and onboarding wizard. One grounded pilot deployment.</p>
+            </div>
+            <div style="padding:1rem;background:var(--bg-surface);border-radius:var(--r-md);border-left:3px solid var(--terracotta);">
+              <div style="font-family:var(--font-mono);font-size:0.75rem;color:var(--pink-deep);font-weight:600;">2027 · PHASE 2</div>
+              <strong>Public Transparency Registry &amp; Reintegration</strong>
+              <p style="font-size:0.875rem;color:var(--text-muted);margin-top:0.25rem;">Public launch of opt-in disclosure registry + first voluntary cohort for medically supervised iboga healing in Gabon.</p>
+            </div>
+            <div style="padding:1rem;background:var(--bg-surface);border-radius:var(--r-md);border-left:3px solid var(--rose-mauve);">
+              <div style="font-family:var(--font-mono);font-size:0.75rem;color:var(--pink-deep);font-weight:600;">BEYOND · PHASE 3</div>
+              <strong>Multi-Jurisdiction Public-Goods Protocol</strong>
+              <p style="font-size:0.875rem;color:var(--text-muted);margin-top:0.25rem;">Chain-agnostic adoption across international cooperatives, municipalities, and NGOs — controlled by no one.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 6: RECRUITMENT & CONTACT
+  ═══════════════════════════════════════════ -->
+  <section class="section" id="contact" style="background:var(--bg-surface);">
+    <div class="container">
+      <div style="max-width:54rem;margin-inline:auto;text-align:center;">
+        <span class="section-label">Join The Movement</span>
+        <h2 class="section-title">We’re Recruiting Builders &amp; Advisors</h2>
+        <p class="section-desc" style="margin-inline:auto;margin-bottom:2.5rem;">
+          If you cut your teeth on the IPFS / Filecoin generation of decentralized infrastructure and understand why control is the enemy — this is the mission that pedigree was made for.
+        </p>
+
+        <div class="card" style="text-align:left;background:#FFFFFF;padding:clamp(1.5rem, 4vw, 2.5rem);box-shadow:0 8px 32px rgba(74,63,68,0.06);">
+          <div class="grid-2" style="gap:2rem;margin-bottom:2rem;">
+            <div>
+              <h4 style="color:var(--pink-deep);margin-bottom:0.75rem;">Technical Architects</h4>
+              <p style="font-size:0.9375rem;color:var(--text-body);">
+                Distributed systems engineers, mechanism designers, and zk-SNARK builders to own the protocol layer end to end without compromise.
+              </p>
+            </div>
+            <div>
+              <h4 style="color:var(--pink-deep);margin-bottom:0.75rem;">Advisors &amp; Researchers</h4>
+              <p style="font-size:0.9375rem;color:var(--text-body);">
+                Behavioral &amp; organizational psychologists (structural capture-detection), neuroscientists (iboga/ibogaine research), and public governance reformers.
+              </p>
+            </div>
+          </div>
+
+          <div style="text-align:center;padding-top:1.5rem;border-top:1px solid var(--border-warm);">
+            <p style="font-size:1.05rem;color:var(--text-main);margin-bottom:1.25rem;">
+              Direct collaboration inquiry:
+            </p>
+            <a href="mailto:no-more-psychopaths@protonmail.com" class="btn btn-primary btn-lg" style="width:100%;max-width:380px;">
+              ✉ no-more-psychopaths@protonmail.com
+            </a>
+            <div style="margin-top:1rem;font-size:0.875rem;color:var(--text-muted);">
+              Signal community link &amp; encrypted channel access available upon verified introduction.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══════════════════════════════════════════
+     SITE FOOTER
+═══════════════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:2.5rem;">
+      <div style="max-width:24rem;">
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+          <div class="nav-logo-icon" style="background:rgba(255,255,255,0.08);border-color:var(--pink-burnt);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C87D7B" stroke-width="2.2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+          </div>
+          <span style="font-family:var(--font-heading);font-weight:700;font-size:1.2rem;color:#FAF7F2;">NO MORE PSYCHOPATHS</span>
+        </div>
+        <p style="font-size:0.9rem;color:#D6C7B7;line-height:1.6;">
+          The Integrity Protocol — An open-source, permissionless, tokenless anti-capture governance infrastructure. Free to access. Governed by no one.
+        </p>
+      </div>
+
+      <div style="display:flex;gap:3rem;flex-wrap:wrap;">
+        <div>
+          <h5 style="color:#FAF7F2;font-size:0.95rem;margin-bottom:1rem;">Protocol</h5>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem;font-size:0.875rem;">
+            <li><a href="#reframe">The Reframe</a></li>
+            <li><a href="#pillars">4 Core Pillars</a></li>
+            <li><a href="#not-building">What We Are NOT</a></li>
+            <li><a href="#onboarding">Preset Wizard</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 style="color:#FAF7F2;font-size:0.95rem;margin-bottom:1rem;">Architecture</h5>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem;font-size:0.875rem;">
+            <li><a href="pages/dao.html">Autonomous NGO Model</a></li>
+            <li><a href="#roadmap">Tech Stack &amp; IPFS</a></li>
+            <li><a href="#roadmap">Gabon Sacred Wood Pilot</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 style="color:#FAF7F2;font-size:0.95rem;margin-bottom:1rem;">Contact</h5>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem;font-size:0.875rem;">
+            <li><a href="mailto:no-more-psychopaths@protonmail.com">Email Us</a></li>
+            <li><a href="#contact">Recruitment</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 No More Psychopaths &amp; The Integrity Protocol. Public Good Infrastructure.</div>
+      <div>Gabon Launchpad · Sacred Wood Iboga Compassion Arm · zk-SNARK Verified</div>
+    </div>
+  </div>
+</footer>
+
+<!-- Interactive Preset Wizard Script -->
+<script>
+const PRESETS = {
+  dao: {
+    badge: 'PRESET: TOKENLESS NGO',
+    title: 'Tokenless, Permissionless Autonomous NGO',
+    power: 'Tri-cameral smart contract separation',
+    powerDesc: 'Proposal, treasury, and execution roles strictly separated. No single admin key.',
+    disclosure: 'Zero-Knowledge Financial Proofs',
+    disclosureDesc: 'Automated conflict verification using zk-SNARKs without revealing private balances.',
+    exit: 'Instant Unconditional Rage-Quit',
+    exitDesc: 'Sub-collectives can fork or exit with proportional capital if capturing patterns emerge.'
+  },
+  municipality: {
+    badge: 'PRESET: LOCAL COUNCIL',
+    title: 'Municipal Transparency & Public Procurement',
+    power: 'Elected Council + Public Observer Multi-Sig',
+    powerDesc: 'Procurement expenditures over threshold require open cryptographic public review.',
+    disclosure: 'Mandatory Asset & Vendor Disclosures',
+    disclosureDesc: 'All municipal decision-makers file cryptographically signed conflict registries.',
+    exit: 'Recall Petition & Citizen Redress',
+    exitDesc: 'Automated on-chain citizen petition triggering transparent review and oversight.'
+  },
+  grant: {
+    badge: 'PRESET: GRANT FOUNDATION',
+    title: 'Uncorruptible Research Grant Allocation',
+    power: 'Blind Peer-Review Validator Pool',
+    powerDesc: 'Grant reviewers cannot see applicant identity, preventing old-boys network capture.',
+    disclosure: 'Milestone-Based Escrow Release',
+    disclosureDesc: 'Funds stream only upon verifiable milestone proof submission.',
+    exit: 'Donor Reclamation on Breach',
+    exitDesc: 'If grant terms or ethical standards are violated, remaining funds automatically revert.'
+  },
+  coop: {
+    badge: 'PRESET: WORKER COOPERATIVE',
+    title: 'Equitable Worker-Owned Cooperative',
+    power: 'One-Person One-Voice Predetermined Code',
+    powerDesc: 'No equity concentration allowed. Executive salary caps enforced at the protocol layer.',
+    disclosure: 'Full Internal Ledger Legibility',
+    disclosureDesc: 'Every member has real-time cryptographic access to cooperative cash flows.',
+    exit: 'Fair Capital Share Withdrawal',
+    exitDesc: 'Departing members receive their exact accrued contribution without punitive lockups.'
+  },
+  ministry: {
+    badge: 'PRESET: NATIONAL AGENCY',
+    title: 'Sovereign Anti-Corruption & Oversight Architecture',
+    power: 'Cross-Agency Checks & Balances',
+    powerDesc: 'Auditing bodies hold immutable inspection keys with zero censorship capability.',
+    disclosure: 'Selective State Secret zk-Verification',
+    disclosureDesc: 'Prove regulatory compliance and fund utilization without leaking sensitive national data.',
+    exit: 'Constitutional Sunset Clauses',
+    exitDesc: 'Emergency authorities expire automatically unless affirmatively renewed with super-majority.'
+  }
+};
+
+function switchPreset(key, btn) {
+  document.querySelectorAll('.preset-tab').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  const p = PRESETS[key] || PRESETS.dao;
+  document.getElementById('preset-badge').textContent = p.badge;
+  document.getElementById('preset-title').textContent = p.title;
+  document.getElementById('spec-power').textContent = p.power;
+  document.getElementById('spec-power-desc').textContent = p.powerDesc;
+  document.getElementById('spec-disclosure').textContent = p.disclosure;
+  document.getElementById('spec-disclosure-desc').textContent = p.disclosureDesc;
+  document.getElementById('spec-exit').textContent = p.exit;
+  document.getElementById('spec-exit-desc').textContent = p.exitDesc;
+}
+</script>
+
+<!-- GSAP Motion Engine Loader -->
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+  var check = setInterval(function() {
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+      clearInterval(check);
+      var s = document.createElement('script');
+      s.src = 'js/motion.js';
+      document.body.appendChild(s);
+    }
+  }, 80);
+});
+</script>
+</body>
+</html>

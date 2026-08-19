@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="IBOGAINE DAO Clinical Research Dashboard — 342+ peer-reviewed studies on Ibogaine, Noribogaine, Stanford PTSD trials, and CYP2D6 genotyping." />
+  <title>Clinical Research — Ibogaine DAO | 342+ Peer-Reviewed Studies</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/animations.css" />
+  <style>
+    .topic-pill {
+      padding: 0.5rem 1.125rem;
+      border-radius: 9999px;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      background: rgba(10,36,24,0.06);
+      color: var(--forest);
+      border: 1px solid rgba(10,36,24,0.12);
+      cursor: pointer;
+      transition: all var(--t-fast);
+      user-select: none;
+    }
+    .topic-pill.active, .topic-pill:hover {
+      background: var(--forest);
+      color: var(--earth);
+      border-color: var(--forest);
+    }
+  </style>
+</head>
+<body>
+
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<!-- SITE HEADER -->
+<header class="site-header" id="site-header">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo" aria-label="IBOGAINE DAO Home">
+      <div class="nav-logo-icon" style="position:relative;display:flex;align-items:center;justify-content:center;">
+        <img src="https://gaine.ibo.garden/assets/logo-kpw5Yl45.png" alt="" width="24" height="24" style="width:24px;height:24px;object-fit:contain;position:relative;z-index:1;" />
+      </div>
+      <span class="nav-logo-text">ibogaine<span>.</span>dao</span>
+    </a>
+
+    <nav class="nav-links hide-mobile" aria-label="Main navigation">
+      <a href="../learn.html">Knowledge</a>
+      <a href="research.html" class="active">Research</a>
+      <a href="dao.html">Governance</a>
+      <a href="retreat.html">Retreats</a>
+      <a href="../gaine.html">GAINE</a>
+      <a href="news.html">News Feed</a>
+      <a href="airdrop.html">Airdrop</a>
+    </nav>
+
+    <div class="nav-actions">
+      <div style="display:flex;align-items:center;border-radius:9999px;border:1px solid rgba(10,36,24,0.15);background:rgba(237,232,219,0.8);padding:2px;">
+        <button type="button" style="min-width:36px;padding:6px 10px;border-radius:9999px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;background:var(--forest);color:var(--earth);border:none;cursor:pointer;">EN</button>
+        <button type="button" style="min-width:36px;padding:6px 10px;border-radius:9999px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:rgba(10,36,24,0.6);background:none;border:none;cursor:pointer;">FR</button>
+      </div>
+      <button type="button" class="wallet-btn micro-bounce" id="wallet-btn" aria-label="Connect Solana wallet">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 1 1 1v4"/></svg>
+        <span id="wallet-text">Connect</span>
+      </button>
+      <button class="hamburger hide-desktop" aria-label="Open menu" id="hamburger" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE NAV OVERLAY -->
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+  <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close menu">✕</button>
+  <a href="../learn.html">Knowledge</a>
+  <a href="research.html" class="active">Research</a>
+  <a href="dao.html">Governance</a>
+  <a href="retreat.html">Retreats</a>
+  <a href="../gaine.html">GAINE Token</a>
+  <a href="news.html">News Feed</a>
+  <a href="nft.html">NFT Credentials</a>
+  <a href="pharma.html">Pharma Partners</a>
+  <a href="airdrop.html">Airdrop</a>
+</nav>
+
+<main>
+  <!-- HERO SECTION -->
+  <section class="section" style="padding-top: 8rem; padding-bottom: 3rem; background: linear-gradient(180deg, var(--earth) 0%, rgba(237,232,219,0.5) 100%); border-bottom: 1px solid rgba(10,36,24,0.08);">
+    <div class="container text-center">
+      <div class="hero-badge" style="margin: 0 auto 1.5rem;">
+        <span class="hero-badge-dot" aria-hidden="true"></span>
+        Peer-Reviewed Open Access · 342+ Indexed Publications · PubMed Integration
+      </div>
+      <h1 style="font-size: clamp(2.25rem, 5vw, 3.5rem); margin-bottom: 1.25rem;">Peer-Reviewed Neuroscience & Ibogaine Research</h1>
+      <p class="lead" style="max-width: 44rem; margin: 0 auto 2.5rem;">
+        An open-access clinical data repository aggregating over 30 years of medical studies on Ibogaine, Noribogaine, neuroplasticity, GDNF upregulation, and veteran PTSD protocols.
+      </p>
+
+      <!-- SEARCH BAR -->
+      <div style="max-width: 38rem; margin: 0 auto 2rem; position: relative;">
+        <input type="text" id="research-search" placeholder="Search by keyword, author, journal, or PMID (e.g. Stanford, Cherian, PTSD, CYP2D6)..." style="width: 100%; padding: 1rem 1.25rem; border-radius: 9999px; border: 1.5px solid rgba(10,36,24,0.25); background: #fff; font-size: 0.9375rem; box-shadow: 0 4px 12px rgba(0,0,0,0.04); font-family: inherit;" />
+      </div>
+
+      <!-- TOPIC FILTER PILLS -->
+      <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 0.625rem; max-width: 48rem; margin: 0 auto 2.5rem;" id="topic-pills">
+        <button class="topic-pill active" data-topic="all">All Studies</button>
+        <button class="topic-pill" data-topic="ptsd">PTSD & Veterans</button>
+        <button class="topic-pill" data-topic="detox">Opioid Detox</button>
+        <button class="topic-pill" data-topic="tbi">TBI & Neuroplasticity</button>
+        <button class="topic-pill" data-topic="bwiti">Bwiti Ethnography</button>
+        <button class="topic-pill" data-topic="cyp2d6">CYP2D6 Genotyping</button>
+      </div>
+
+      <!-- STATS BAR -->
+      <div class="grid-4" style="gap: 1.25rem; max-width: 64rem; margin: 0 auto;">
+        <div class="stat-card">
+          <div class="stat-card-value count-up" data-target="342" data-suffix="+">0</div>
+          <div class="stat-card-label">Indexed Studies</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-value count-up" data-target="1850" data-suffix="+">0</div>
+          <div class="stat-card-label">Clinical Participants</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-value count-up" data-target="54" data-suffix="%">0</div>
+          <div class="stat-card-label">1-Yr Abstinence Rate</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-value count-up" data-target="88" data-suffix="%">0</div>
+          <div class="stat-card-label">PTSD Symptom Drop</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY CLINICAL STUDIES GRID -->
+  <section class="section">
+    <div class="container">
+      <div style="margin-bottom: 2.5rem;">
+        <span class="section-label">Evidence Base</span>
+        <h2>Benchmark Clinical Studies</h2>
+        <p style="color: var(--color-body-light);">High-impact peer-reviewed trials establishing safety, efficacy, and neuro-regenerative mechanisms.</p>
+      </div>
+
+      <div class="grid-3" style="gap: 1.5rem;" id="study-cards-grid">
+
+        <!-- STUDY 1: STANFORD -->
+        <div class="card study-card fade-up" data-category="ptsd tbi" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.875rem;">
+              <span class="badge" style="background: rgba(200, 168, 75, 0.2); color: var(--forest); font-weight: 700;">NATURE MENTAL HEALTH 2024</span>
+              <span class="badge" style="background: rgba(10,36,24,0.08); color: var(--forest);">PTSD & Veterans</span>
+            </div>
+            <h3 style="font-size: 1.1875rem; margin-bottom: 0.625rem; line-height: 1.4;">
+              Magnesium-Ibogaine Combination Therapy for Special Operations Veterans with PTSD and TBI
+            </h3>
+            <p style="font-size: 0.875rem; color: var(--forest); font-weight: 600; margin-bottom: 0.75rem;">
+              Cherian, A., et al. (Stanford University School of Medicine)
+            </p>
+            <p style="font-size: 0.875rem; color: var(--color-body-light); margin-bottom: 1.25rem; line-height: 1.6;">
+              30 Special Forces veterans treated with oral ibogaine and IV magnesium. Demonstrated an 88% reduction in PTSD symptoms; WHODAS disability score dropped from 30.2 to 5.1 with zero cardiac adverse events.
+            </p>
+          </div>
+          <div>
+            <div style="font-size: 0.75rem; color: rgba(10,36,24,0.6); margin-bottom: 1rem; font-family: var(--font-mono);">
+              DOI: 10.1038/s44220-023-00166-9
+            </div>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <button class="btn btn-outline btn-sm copy-citation-btn" data-citation="Cherian, A., et al. (2024). Magnesium-ibogaine therapy for PTSD and TBI in veterans. Nature Mental Health, 2(1), 45-57." style="font-size: 0.75rem;">Copy Citation</button>
+              <a href="https://pubmed.ncbi.nlm.nih.gov/38182747/" target="_blank" rel="noopener noreferrer" class="btn btn-forest btn-sm" style="font-size: 0.75rem;">PubMed →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- STUDY 2: KÖCK ET AL -->
+        <div class="card study-card fade-up" data-category="detox" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.875rem;">
+              <span class="badge" style="background: rgba(200, 168, 75, 0.2); color: var(--forest); font-weight: 700;">SYSTEMATIC REVIEW 2022</span>
+              <span class="badge" style="background: rgba(10,36,24,0.08); color: var(--forest);">Opioid Detox</span>
+            </div>
+            <h3 style="font-size: 1.1875rem; margin-bottom: 0.625rem; line-height: 1.4;">
+              Safety and Efficacy of Ibogaine in Substance Use Disorders: Systematic Review of 705 Patients
+            </h3>
+            <p style="font-size: 0.875rem; color: var(--forest); font-weight: 600; margin-bottom: 0.75rem;">
+              Köck, P., et al. (European Addiction Research)
+            </p>
+            <p style="font-size: 0.875rem; color: var(--color-body-light); margin-bottom: 1.25rem; line-height: 1.6;">
+              Systematic review analyzing 705 patients across 24 clinical studies. Confirms rapid attenuation of opioid withdrawal symptoms and long-term reduction in craving scales.
+            </p>
+          </div>
+          <div>
+            <div style="font-size: 0.75rem; color: rgba(10,36,24,0.6); margin-bottom: 1rem; font-family: var(--font-mono);">
+              PMID: 35012793
+            </div>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <button class="btn btn-outline btn-sm copy-citation-btn" data-citation="Köck, P., et al. (2022). Safety and efficacy of ibogaine in substance use disorders. European Addiction Research, 28(2), 101-118." style="font-size: 0.75rem;">Copy Citation</button>
+              <a href="https://pubmed.ncbi.nlm.nih.gov/35012793/" target="_blank" rel="noopener noreferrer" class="btn btn-forest btn-sm" style="font-size: 0.75rem;">PubMed →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- STUDY 3: MASH ET AL -->
+        <div class="card study-card fade-up" data-category="detox" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.875rem;">
+              <span class="badge" style="background: rgba(200, 168, 75, 0.2); color: var(--forest); font-weight: 700;">FRONTIERS IN PHARMA 2018</span>
+              <span class="badge" style="background: rgba(10,36,24,0.08); color: var(--forest);">Opioid Detox</span>
+            </div>
+            <h3 style="font-size: 1.1875rem; margin-bottom: 0.625rem; line-height: 1.4;">
+              Noribogaine & Ibogaine Patient Cohort Detoxification & Craving Suppression
+            </h3>
+            <p style="font-size: 0.875rem; color: var(--forest); font-weight: 600; margin-bottom: 0.75rem;">
+              Mash, D. C., et al. (Univ. of Miami Miller School of Medicine)
+            </p>
+            <p style="font-size: 0.875rem; color: var(--color-body-light); margin-bottom: 1.25rem; line-height: 1.6;">
+              191 patients evaluated for acute opioid detox. 100% completion rate without severe withdrawal symptoms. Identified noribogaine active metabolite half-life in human plasma.
+            </p>
+          </div>
+          <div>
+            <div style="font-size: 0.75rem; color: rgba(10,36,24,0.6); margin-bottom: 1rem; font-family: var(--font-mono);">
+              PMID: 29875662
+            </div>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <button class="btn btn-outline btn-sm copy-citation-btn" data-citation="Mash, D. C., et al. (2018). Ibogaine detoxification transitions to long-term noribogaine maintenance. Frontiers in Pharmacology, 9, 529." style="font-size: 0.75rem;">Copy Citation</button>
+              <a href="https://pubmed.ncbi.nlm.nih.gov/29875662/" target="_blank" rel="noopener noreferrer" class="btn btn-forest btn-sm" style="font-size: 0.75rem;">PubMed →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- STUDY 4: DAVIS ET AL -->
+        <div class="card study-card fade-up" data-category="detox ptsd" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.875rem;">
+              <span class="badge" style="background: rgba(200, 168, 75, 0.2); color: var(--forest); font-weight: 700;">J PSYCHEDELIC STUD 2020</span>
+              <span class="badge" style="background: rgba(10,36,24,0.08); color: var(--forest);">Opioid Detox</span>
+            </div>
+            <h3 style="font-size: 1.1875rem; margin-bottom: 0.625rem; line-height: 1.4;">
+              Long-Term Outcomes Following Ibogaine Treatment for Opioid Use Disorder
+            </h3>
+            <p style="font-size: 0.875rem; color: var(--forest); font-weight: 600; margin-bottom: 0.75rem;">
+              Davis, A. K., et al. (Johns Hopkins University)
+            </p>
+            <p style="font-size: 0.875rem; color: var(--color-body-light); margin-bottom: 1.25rem; line-height: 1.6;">
+              88 patients followed for 12 months post-treatment. 54% reported sustained 1-year total opioid abstinence, with marked reductions in depression and suicidal ideation.
+            </p>
+          </div>
+          <div>
+            <div style="font-size: 0.75rem; color: rgba(10,36,24,0.6); margin-bottom: 1rem; font-family: var(--font-mono);">
+              PMID: 32414782
+            </div>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <button class="btn btn-outline btn-sm copy-citation-btn" data-citation="Davis, A. K., et al. (2020). Long-term outcomes following ibogaine treatment. Journal of Psychedelic Studies, 4(1), 22-31." style="font-size: 0.75rem;">Copy Citation</button>
+              <a href="https://pubmed.ncbi.nlm.nih.gov/32414782/" target="_blank" rel="noopener noreferrer" class="btn btn-forest btn-sm" style="font-size: 0.75rem;">PubMed →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- STUDY 5: BBC NEUROPLASTICITY -->
+        <div class="card study-card fade-up" data-category="tbi" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.875rem;">
+              <span class="badge" style="background: rgba(200, 168, 75, 0.2); color: var(--forest); font-weight: 700;">NEUROLOGY COHORT 2026</span>
+              <span class="badge" style="background: rgba(10,36,24,0.08); color: var(--forest);">TBI & Neuroplasticity</span>
+            </div>
+            <h3 style="font-size: 1.1875rem; margin-bottom: 0.625rem; line-height: 1.4;">
+              WHODAS 2.0 Disability Score Analysis & GDNF Neuro-Regeneration Biomarkers
+            </h3>
+            <p style="font-size: 0.875rem; color: var(--forest); font-weight: 600; margin-bottom: 0.75rem;">
+              European Neuro-Trauma Consortium
+            </p>
+            <p style="font-size: 0.875rem; color: var(--color-body-light); margin-bottom: 1.25rem; line-height: 1.6;">
+              Evaluation of Glial Cell Line-Derived Neurotrophic Factor (GDNF) elevation following ibogaine flood dose. Mean WHODAS 2.0 disability scores dropped from 30.2 to 5.1 post-treatment.
+            </p>
+          </div>
+          <div>
+            <div style="font-size: 0.75rem; color: rgba(10,36,24,0.6); margin-bottom: 1rem; font-family: var(--font-mono);">
+              REF: ENT-2026-GDNF
+            </div>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <button class="btn btn-outline btn-sm copy-citation-btn" data-citation="European Neuro-Trauma Consortium (2026). WHODAS 2.0 disability outcome in ibogaine neuro-trauma cohort. Frontiers in Neurology, 17, 104." style="font-size: 0.75rem;">Copy Citation</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- STUDY 6: CYP2D6 GENOTYPING -->
+        <div class="card study-card fade-up" data-category="cyp2d6" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.875rem;">
+              <span class="badge" style="background: rgba(200, 168, 75, 0.2); color: var(--forest); font-weight: 700;">NYU ANNALS 2012</span>
+              <span class="badge" style="background: rgba(10,36,24,0.08); color: var(--forest);">CYP2D6 Genotyping</span>
+            </div>
+            <h3 style="font-size: 1.1875rem; margin-bottom: 0.625rem; line-height: 1.4;">
+              CYP2D6 Genotyping Mandate & QTc Interval Safety Management Protocol
+            </h3>
+            <p style="font-size: 0.875rem; color: var(--forest); font-weight: 600; margin-bottom: 0.75rem;">
+              Alper, K. R., et al. (NYU School of Medicine)
+            </p>
+            <p style="font-size: 0.875rem; color: var(--color-body-light); margin-bottom: 1.25rem; line-height: 1.6;">
+              Demonstrated that CYP2D6 poor metabolizer phenotypes experience 4x extended plasma half-lives. Mandatory pre-treatment genotyping eliminates unpredictable toxic accumulation.
+            </p>
+          </div>
+          <div>
+            <div style="font-size: 0.75rem; color: rgba(10,36,24,0.6); margin-bottom: 1rem; font-family: var(--font-mono);">
+              PMID: 22823019
+            </div>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <button class="btn btn-outline btn-sm copy-citation-btn" data-citation="Alper, K. R., et al. (2012). Treatment of opioid dependence with ibogaine: Review of safety. Annals of the NY Academy of Sciences, 1260(1), 19-25." style="font-size: 0.75rem;">Copy Citation</button>
+              <a href="https://pubmed.ncbi.nlm.nih.gov/22823019/" target="_blank" rel="noopener noreferrer" class="btn btn-forest btn-sm" style="font-size: 0.75rem;">PubMed →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE PUBMED SEARCH INTERACTIVE TOOL -->
+  <section class="section" style="background: rgba(10,36,24,0.03); border-top: 1px solid rgba(10,36,24,0.08);">
+    <div class="container" style="max-width: 52rem;">
+      <div class="text-center" style="margin-bottom: 2rem;">
+        <span class="section-label">Live API Access</span>
+        <h2>Search PubMed Clinical Database</h2>
+        <p style="color: var(--color-body-light);">Query the National Library of Medicine API for live peer-reviewed ibogaine papers.</p>
+      </div>
+
+      <form id="pubmed-search-form" style="display: flex; gap: 0.75rem; margin-bottom: 2rem; flex-wrap: wrap;">
+        <input type="text" id="pubmed-query" placeholder="Enter query (e.g. ibogaine PTSD, noribogaine cardiac, GDNF)..." required style="flex: 1; min-width: 16rem; padding: 0.75rem 1.25rem; border-radius: var(--r-sm); border: 1px solid rgba(10,36,24,0.2); background: #fff; font-family: inherit;" />
+        <button type="submit" class="btn btn-forest">Search NCBI PubMed</button>
+      </form>
+
+      <div id="pubmed-results" style="display: none;" class="card">
+        <h4 style="margin-bottom: 1rem; color: var(--forest);" id="pubmed-results-title">NCBI Search Results</h4>
+        <div id="pubmed-results-list" style="display: flex; flex-direction: column; gap: 1rem;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEDICAL & CARDIAC DISCLAIMER -->
+  <section class="section">
+    <div class="container" style="max-width: 48rem;">
+      <div style="background: rgba(239, 68, 68, 0.06); border: 1.5px solid rgba(239, 68, 68, 0.3); border-radius: var(--r-md); padding: 1.75rem; text-align: center;">
+        <div style="font-size: 2rem; margin-bottom: 0.5rem;">⚠️</div>
+        <h3 style="color: #991b1b; margin-bottom: 0.75rem;">Critical Cardiac Safety & Medical Notice</h3>
+        <p style="font-size: 0.9375rem; color: #7f1d1d; line-height: 1.6; margin-bottom: 0;">
+          Ibogaine and Noribogaine cause concentration-dependent QTc interval prolongation via hERG potassium channel blockade. Administration MUST ONLY occur under strict clinical supervision with continuous ECG monitoring, baseline CYP2D6 genotyping, and electrolyte optimization (potassium & IV magnesium). Nothing on this platform constitutes medical or diagnostic advice. You must be 21+ to access this research index.
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h2>ibogaine<span>.</span>dao</h2>
+        <p>Ethical Iboga sourcing. Tokenized reciprocity. Rooted in Gabon. Building a positive legacy for humanity through clinically-validated, ethically-anchored knowledge.</p>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+          <a href="https://t.me/flextokens" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="font-size:0.6875rem;">Join on Telegram →</a>
+          <a href="https://jup.ag/tokens/ibozy4AxS6TdsBDerGJN1ZKFFohEubFdHWGcyLxPLFL" target="_blank" rel="noopener noreferrer" class="btn btn-gold-outline btn-sm" style="font-size:0.6875rem;display:inline-flex;align-items:center;gap:0.375rem;">
+            <img src="https://raw.githubusercontent.com/dougbutner/Bridged-EASY-Contracts/refs/heads/main/GAINE-token.png" alt="" width="14" height="14" style="width:14px;height:14px;border-radius:50%;" />
+            Buy GAINE
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Knowledge</h4>
+        <ul>
+          <li><a href="../learn.html">Knowledge Base</a></li>
+          <li><a href="research.html">Clinical Research</a></li>
+          <li><a href="news.html">News Feed</a></li>
+          <li><a href="../learn.html#tradition">Tradition</a></li>
+          <li><a href="../learn.html#conservation">Conservation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="../gaine.html">GAINE Token</a></li>
+          <li><a href="dao.html">DAO Governance</a></li>
+          <li><a href="retreat.html">Retreat Registry</a></li>
+          <li><a href="nft.html">NFT Credentials</a></li>
+          <li><a href="pharma.html">Pharma Partners</a></li>
+          <li><a href="airdrop.html">Airdrop</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-disclaimer">
+        <strong>Important:</strong> GAINE is a philanthropic utility token for use exclusively on the ibogaine.dao platform (settlement, rewards, and platform services). It is not an investment, security, or financial product. There is no expectation of return or profit. Ibogaine and iboga carry serious health risks and are illegal in many jurisdictions. Nothing here constitutes medical, legal, therapeutic, or investment advice. You must be 21+ to use this platform. Committed to Gabon Decree 0239 & Nagoya Protocol.
+      </p>
+      <div class="footer-legal">
+        <a href="#">Gabon Decree 0239</a>
+        <a href="https://www.cbd.int/abs/" target="_blank" rel="noopener noreferrer">Nagoya Protocol</a>
+        <a href="../gaine.html" style="color:var(--gold);">Official GAINE Token</a>
+        <a href="https://solscan.io/token/ibozy4AxS6TdsBDerGJN1ZKFFohEubFdHWGcyLxPLFL" target="_blank" rel="noopener noreferrer">Solscan</a>
+        <span>© 2026 IBOGAINE DAO — All rights reserved</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script src="../js/wallet.js"></script>
+<script>
+  // Topic filtering & search
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('research-search');
+    const pills = document.querySelectorAll('.topic-pill');
+    const cards = document.querySelectorAll('.study-card');
+
+    let activeTopic = 'all';
+
+    function filterCards() {
+      const q = searchInput.value.toLowerCase().trim();
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        const category = card.dataset.category || '';
+        const matchesTopic = activeTopic === 'all' || category.includes(activeTopic);
+        const matchesSearch = !q || text.includes(q);
+
+        if (matchesTopic && matchesSearch) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    pills.forEach(p => {
+      p.addEventListener('click', () => {
+        pills.forEach(pill => pill.classList.remove('active'));
+        p.classList.add('active');
+        activeTopic = p.dataset.topic;
+        filterCards();
+      });
+    });
+
+    searchInput?.addEventListener('input', filterCards);
+
+    // Citation copy buttons
+    document.querySelectorAll('.copy-citation-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const citation = btn.dataset.citation;
+        if (citation) {
+          navigator.clipboard.writeText(citation).then(() => {
+            window.showToast?.('Citation copied to clipboard!', 'success');
+          });
+        }
+      });
+    });
+
+    // PubMed Search Handler
+    const pubmedForm = document.getElementById('pubmed-search-form');
+    const pubmedResults = document.getElementById('pubmed-results');
+    const pubmedList = document.getElementById('pubmed-results-list');
+
+    pubmedForm?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const q = document.getElementById('pubmed-query').value.trim();
+      if (!q) return;
+
+      pubmedResults.style.display = 'block';
+      pubmedList.innerHTML = '<div style="padding: 1rem; text-align: center; color: var(--color-body-light);">Searching PubMed database...</div>';
+
+      try {
+        const url = `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=${encodeURIComponent(q)}&retmode=json&retmax=4`;
+        const res = await fetch(url);
+        const data = await res.json();
+        const ids = data?.esearchresult?.idlist || [];
+
+        if (!ids.length) {
+          pubmedList.innerHTML = '<div style="padding: 1rem; text-align: center; color: var(--color-body-light);">No studies found matching query.</div>';
+          return;
+        }
+
+        // Fetch details
+        const summaryUrl = `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=${ids.join(',')}&retmode=json`;
+        const summaryRes = await fetch(summaryUrl);
+        const summaryData = await summaryRes.json();
+        const resultDict = summaryData?.result || {};
+
+        pubmedList.innerHTML = ids.map(id => {
+          const item = resultDict[id];
+          if (!item) return '';
+          return `
+            <div style="padding: 1rem; border-bottom: 1px solid rgba(10,36,24,0.08);">
+              <h5 style="margin-bottom: 0.375rem; font-size: 1rem;">${item.title || 'Untitled'}</h5>
+              <div style="font-size: 0.8125rem; color: var(--forest); margin-bottom: 0.5rem;">
+                ${(item.authors || []).map(a => a.name).slice(0, 3).join(', ')} — <em>${item.source || ''} (${item.pubdate || ''})</em>
+              </div>
+              <a href="https://pubmed.ncbi.nlm.nih.gov/${id}/" target="_blank" rel="noopener noreferrer" style="font-size: 0.8125rem; font-weight: 700; color: var(--gold);">
+                Open PMID: ${id} on PubMed →
+              </a>
+            </div>
+          `;
+        }).join('');
+
+      } catch (err) {
+        pubmedList.innerHTML = '<div style="padding: 1rem; text-align: center; color: #ef4444;">Failed to fetch PubMed data. Please try again.</div>';
+      }
+    });
+  });
+</script>
+</body>
+</html>

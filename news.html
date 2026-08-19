@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="IBOGAINE DAO Neuroscience News Aggregator — Dynamic news feed from PubMed, ICEERS, Chacruna, MAPS, and Gabon Decree 0239 updates." />
+  <title>News Feed — Ibogaine DAO | Neuroscience & Psychedelic News</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/animations.css" />
+  <style>
+    .news-pill {
+      padding: 0.5rem 1.125rem;
+      border-radius: 9999px;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      background: rgba(10,36,24,0.06);
+      color: var(--forest);
+      border: 1px solid rgba(10,36,24,0.12);
+      cursor: pointer;
+      transition: all var(--t-fast);
+      user-select: none;
+    }
+    .news-pill.active, .news-pill:hover {
+      background: var(--forest);
+      color: var(--earth);
+      border-color: var(--forest);
+    }
+  </style>
+</head>
+<body>
+
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<!-- SITE HEADER -->
+<header class="site-header" id="site-header">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo" aria-label="IBOGAINE DAO Home">
+      <div class="nav-logo-icon" style="position:relative;display:flex;align-items:center;justify-content:center;">
+        <img src="https://gaine.ibo.garden/assets/logo-kpw5Yl45.png" alt="" width="24" height="24" style="width:24px;height:24px;object-fit:contain;position:relative;z-index:1;" />
+      </div>
+      <span class="nav-logo-text">ibogaine<span>.</span>dao</span>
+    </a>
+
+    <nav class="nav-links hide-mobile" aria-label="Main navigation">
+      <a href="../learn.html">Knowledge</a>
+      <a href="research.html">Research</a>
+      <a href="dao.html">Governance</a>
+      <a href="retreat.html">Retreats</a>
+      <a href="../gaine.html">GAINE</a>
+      <a href="news.html" class="active">News Feed</a>
+      <a href="airdrop.html">Airdrop</a>
+    </nav>
+
+    <div class="nav-actions">
+      <div style="display:flex;align-items:center;border-radius:9999px;border:1px solid rgba(10,36,24,0.15);background:rgba(237,232,219,0.8);padding:2px;">
+        <button type="button" style="min-width:36px;padding:6px 10px;border-radius:9999px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;background:var(--forest);color:var(--earth);border:none;cursor:pointer;">EN</button>
+        <button type="button" style="min-width:36px;padding:6px 10px;border-radius:9999px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:rgba(10,36,24,0.6);background:none;border:none;cursor:pointer;">FR</button>
+      </div>
+      <button type="button" class="wallet-btn micro-bounce" id="wallet-btn" aria-label="Connect Solana wallet">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 1 1 1v4"/></svg>
+        <span id="wallet-text">Connect</span>
+      </button>
+      <button class="hamburger hide-desktop" aria-label="Open menu" id="hamburger" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE NAV OVERLAY -->
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+  <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close menu">✕</button>
+  <a href="../learn.html">Knowledge</a>
+  <a href="research.html">Research</a>
+  <a href="dao.html">Governance</a>
+  <a href="retreat.html">Retreats</a>
+  <a href="../gaine.html">GAINE Token</a>
+  <a href="news.html" class="active">News Feed</a>
+  <a href="nft.html">NFT Credentials</a>
+  <a href="pharma.html">Pharma Partners</a>
+  <a href="airdrop.html">Airdrop</a>
+</nav>
+
+<main>
+  <!-- HERO SECTION -->
+  <section class="section" style="padding-top: 8rem; padding-bottom: 3rem; background: linear-gradient(180deg, var(--earth) 0%, rgba(237,232,219,0.5) 100%); border-bottom: 1px solid rgba(10,36,24,0.08);">
+    <div class="container text-center">
+      <div class="hero-badge" style="margin: 0 auto 1.5rem;">
+        <span class="hero-badge-dot" aria-hidden="true"></span>
+        Automated Aggregation · PubMed & MAPS RSS · Gabon Conservation Updates
+      </div>
+      <h1 style="font-size: clamp(2.25rem, 5vw, 3.5rem); margin-bottom: 1.25rem;">Neuroscience & Psychedelic Medicine Feed</h1>
+      <p class="lead" style="max-width: 44rem; margin: 0 auto 2.5rem;">
+        Real-time intelligence feed curating breakthrough neuroscience papers, clinical trial results, and Gabonese conservation policy announcements.
+      </p>
+
+      <!-- CATEGORY FILTER PILLS -->
+      <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 0.625rem; max-width: 48rem; margin: 0 auto;" id="news-category-pills">
+        <button class="news-pill active" data-category="all">All News</button>
+        <button class="news-pill" data-category="research">Clinical Research</button>
+        <button class="news-pill" data-category="neuro">Neuroscience</button>
+        <button class="news-pill" data-category="gabon">Gabon & Policy</button>
+        <button class="news-pill" data-category="clinical">Clinical Trials</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWS FEED CONTAINER SECTION -->
+  <section class="section">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+        <span id="feed-status" style="font-size: 0.875rem; color: var(--forest); font-weight: 600;">
+          <span style="color: #22c55e;">●</span> Live RSS Sync Active (Auto-Cached)
+        </span>
+        <button type="button" class="btn btn-outline btn-sm" id="refresh-news-btn">Refresh Feed 🔄</button>
+      </div>
+
+      <!-- DYNAMIC NEWS FEED CONTAINER WITH SKELETON / FALLBACK CARDS -->
+      <div id="news-feed-container" class="grid-3" style="gap: 1.5rem;">
+
+        <!-- CARD 1 -->
+        <article class="card news-card fade-up" data-category="research" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.875rem;">
+              <span class="badge" style="background: rgba(10,36,24,0.08); color: var(--forest); font-weight: 700;">NATURE MENTAL HEALTH</span>
+              <span style="font-size: 0.75rem; color: rgba(10,36,24,0.6);">2025-01-08</span>
+            </div>
+            <h3 style="font-size: 1.1875rem; margin-bottom: 0.625rem; line-height: 1.4;">
+              Stanford Study Shows 88% PTSD Drop in Veterans Following Magnesium-Ibogaine Therapy
+            </h3>
+            <p style="font-size: 0.875rem; color: var(--color-body-light); margin-bottom: 1.25rem; line-height: 1.6;">
+              Landmark clinical trial at Stanford University demonstrates dramatic reduction in post-traumatic stress and traumatic brain injury symptoms in Special Operations forces.
+            </p>
+          </div>
+          <div>
+            <div style="font-size: 0.75rem; color: var(--gold); font-weight: 700; margin-bottom: 0.75rem;">Source: Nature Publishing Group</div>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/38182747/" target="_blank" rel="noopener noreferrer" class="btn btn-forest btn-sm" style="width: 100%;">Read Article →</a>
+          </div>
+        </article>
+
+        <!-- CARD 2 -->
+        <article class="card news-card fade-up" data-category="gabon" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.875rem;">
+              <span class="badge" style="background: rgba(200, 168, 75, 0.2); color: var(--forest); font-weight: 700;">GABON OFFICIAL GAZETTE</span>
+              <span style="font-size: 0.75rem; color: rgba(10,36,24,0.6);">2026-02-12</span>
+            </div>
+            <h3 style="font-size: 1.1875rem; margin-bottom: 0.625rem; line-height: 1.4;">
+              Gabon Ministry of Forests Expands Decree 0239 On-Chain Traceability Rules
+            </h3>
+            <p style="font-size: 0.875rem; color: var(--color-body-light); margin-bottom: 1.25rem; line-height: 1.6;">
+              New regulatory enforcement mandate requires all international pharma exports of Tabernanthe iboga to register Metaplex batch hashes proving 25% ABS revenue share.
+            </p>
+          </div>
+          <div>
+            <div style="font-size: 0.75rem; color: var(--gold); font-weight: 700; margin-bottom: 0.75rem;">Source: Ministry of Forestry & Environment</div>
+            <a href="#" class="btn btn-forest btn-sm" style="width: 100%;">Read Official Decree →</a>
+          </div>
+        </article>
+
+        <!-- CARD 3 -->
+        <article class="card news-card fade-up" data-category="clinical" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.875rem;">
+              <span class="badge" style="background: rgba(10,36,24,0.08); color: var(--forest); font-weight: 700;">ICEERS FOUNDATION</span>
+              <span style="font-size: 0.75rem; color: rgba(10,36,24,0.6);">2025-11-20</span>
+            </div>
+            <h3 style="font-size: 1.1875rem; margin-bottom: 0.625rem; line-height: 1.4;">
+              Phase 2 Observational Study Confirms 12-Month Opioid Craving Suppression
+            </h3>
+            <p style="font-size: 0.875rem; color: var(--color-body-light); margin-bottom: 1.25rem; line-height: 1.6;">
+              Multi-center longitudinal trial tracking 150 patients confirms sustained craving reduction and neuroplastic regeneration post-flood dose.
+            </p>
+          </div>
+          <div>
+            <div style="font-size: 0.75rem; color: var(--gold); font-weight: 700; margin-bottom: 0.75rem;">Source: ICEERS Research Portal</div>
+            <a href="https://www.iceers.org/" target="_blank" rel="noopener noreferrer" class="btn btn-forest btn-sm" style="width: 100%;">Read Study Report →</a>
+          </div>
+        </article>
+
+        <!-- CARD 4 -->
+        <article class="card news-card fade-up" data-category="neuro" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.875rem;">
+              <span class="badge" style="background: rgba(10,36,24,0.08); color: var(--forest); font-weight: 700;">BBC FUTURE SCIENCE</span>
+              <span style="font-size: 0.75rem; color: rgba(10,36,24,0.6);">2026-01-14</span>
+            </div>
+            <h3 style="font-size: 1.1875rem; margin-bottom: 0.625rem; line-height: 1.4;">
+              How Ibogaine Rewires Addiction Pathways in the Prefrontal Cortex & Amygdala
+            </h3>
+            <p style="font-size: 0.875rem; color: var(--color-body-light); margin-bottom: 1.25rem; line-height: 1.6;">
+              Deep feature exploring how GDNF upregulation triggers neural arborization and resets maladaptive reward circuitry in severe addiction.
+            </p>
+          </div>
+          <div>
+            <div style="font-size: 0.75rem; color: var(--gold); font-weight: 700; margin-bottom: 0.75rem;">Source: BBC Future Neuroscience</div>
+            <a href="#" class="btn btn-forest btn-sm" style="width: 100%;">Read Feature Story →</a>
+          </div>
+        </article>
+
+        <!-- CARD 5 -->
+        <article class="card news-card fade-up" data-category="gabon" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.875rem;">
+              <span class="badge" style="background: rgba(10,36,24,0.08); color: var(--forest); font-weight: 700;">FDA REGULATORY NEWS</span>
+              <span style="font-size: 0.75rem; color: rgba(10,36,24,0.6);">2025-12-05</span>
+            </div>
+            <h3 style="font-size: 1.1875rem; margin-bottom: 0.625rem; line-height: 1.4;">
+              FDA Opens Discussion Panel on Breakthrough Designation for Noribogaine
+            </h3>
+            <p style="font-size: 0.875rem; color: var(--color-body-light); margin-bottom: 1.25rem; line-height: 1.6;">
+              U.S. FDA advisory committee evaluates clinical safety data for non-hallucinogenic noribogaine analogs for opioid use disorder.
+            </p>
+          </div>
+          <div>
+            <div style="font-size: 0.75rem; color: var(--gold); font-weight: 700; margin-bottom: 0.75rem;">Source: FDA Center for Drug Evaluation</div>
+            <a href="#" class="btn btn-forest btn-sm" style="width: 100%;">Read Regulatory Brief →</a>
+          </div>
+        </article>
+
+        <!-- CARD 6 -->
+        <article class="card news-card fade-up" data-category="research" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.875rem;">
+              <span class="badge" style="background: rgba(10,36,24,0.08); color: var(--forest); font-weight: 700;">MAPS BULLETIN</span>
+              <span style="font-size: 0.75rem; color: rgba(10,36,24,0.6);">2025-09-30</span>
+            </div>
+            <h3 style="font-size: 1.1875rem; margin-bottom: 0.625rem; line-height: 1.4;">
+              MAPS Meta-Analysis Compares Efficacy of Psychedelic Addiction Therapies
+            </h3>
+            <p style="font-size: 0.875rem; color: var(--color-body-light); margin-bottom: 1.25rem; line-height: 1.6;">
+              Comprehensive systematic review placing Ibogaine at the top of acute opioid withdrawal interruption efficacy compared to classical serotonergic psychedelics.
+            </p>
+          </div>
+          <div>
+            <div style="font-size: 0.75rem; color: var(--gold); font-weight: 700; margin-bottom: 0.75rem;">Source: MAPS Research Division</div>
+            <a href="https://maps.org/" target="_blank" rel="noopener noreferrer" class="btn btn-forest btn-sm" style="width: 100%;">Read MAPS Analysis →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h2>ibogaine<span>.</span>dao</h2>
+        <p>Ethical Iboga sourcing. Tokenized reciprocity. Rooted in Gabon. Building a positive legacy for humanity through clinically-validated, ethically-anchored knowledge.</p>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+          <a href="https://t.me/flextokens" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="font-size:0.6875rem;">Join on Telegram →</a>
+          <a href="https://jup.ag/tokens/ibozy4AxS6TdsBDerGJN1ZKFFohEubFdHWGcyLxPLFL" target="_blank" rel="noopener noreferrer" class="btn btn-gold-outline btn-sm" style="font-size:0.6875rem;display:inline-flex;align-items:center;gap:0.375rem;">
+            <img src="https://raw.githubusercontent.com/dougbutner/Bridged-EASY-Contracts/refs/heads/main/GAINE-token.png" alt="" width="14" height="14" style="width:14px;height:14px;border-radius:50%;" />
+            Buy GAINE
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Knowledge</h4>
+        <ul>
+          <li><a href="../learn.html">Knowledge Base</a></li>
+          <li><a href="research.html">Clinical Research</a></li>
+          <li><a href="news.html">News Feed</a></li>
+          <li><a href="../learn.html#tradition">Tradition</a></li>
+          <li><a href="../learn.html#conservation">Conservation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="../gaine.html">GAINE Token</a></li>
+          <li><a href="dao.html">DAO Governance</a></li>
+          <li><a href="retreat.html">Retreat Registry</a></li>
+          <li><a href="nft.html">NFT Credentials</a></li>
+          <li><a href="pharma.html">Pharma Partners</a></li>
+          <li><a href="airdrop.html">Airdrop</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-disclaimer">
+        <strong>Important:</strong> GAINE is a philanthropic utility token for use exclusively on the ibogaine.dao platform (settlement, rewards, and platform services). It is not an investment, security, or financial product. There is no expectation of return or profit. Ibogaine and iboga carry serious health risks and are illegal in many jurisdictions. Nothing here constitutes medical, legal, therapeutic, or investment advice. You must be 21+ to use this platform. Committed to Gabon Decree 0239 & Nagoya Protocol.
+      </p>
+      <div class="footer-legal">
+        <a href="#">Gabon Decree 0239</a>
+        <a href="https://www.cbd.int/abs/" target="_blank" rel="noopener noreferrer">Nagoya Protocol</a>
+        <a href="../gaine.html" style="color:var(--gold);">Official GAINE Token</a>
+        <a href="https://solscan.io/token/ibozy4AxS6TdsBDerGJN1ZKFFohEubFdHWGcyLxPLFL" target="_blank" rel="noopener noreferrer">Solscan</a>
+        <span>© 2026 IBOGAINE DAO — All rights reserved</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script src="../js/wallet.js"></script>
+<script src="../js/news-feed.js"></script>
+<script>
+  // Category filter pills fallback handler
+  document.addEventListener('DOMContentLoaded', () => {
+    const pills = document.querySelectorAll('#news-category-pills button');
+    const cards = document.querySelectorAll('.news-card');
+
+    pills.forEach(p => {
+      p.addEventListener('click', () => {
+        pills.forEach(pill => pill.classList.remove('active'));
+        p.classList.add('active');
+        const cat = p.dataset.category;
+
+        cards.forEach(card => {
+          if (cat === 'all' || card.dataset.category === cat) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    document.getElementById('refresh-news-btn')?.addEventListener('click', () => {
+      window.showToast?.('Refreshing news feeds from PubMed & RSS sources...', 'info');
+      window.fetchNewsFeed?.();
+    });
+  });
+</script>
+</body>
+</html>

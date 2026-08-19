@@ -1,0 +1,24 @@
+<?php
+/**
+ * IBOGAINE DAO — Production Configuration Blueprint
+ * Copy this file to config.php and update with your production credentials.
+ *
+ * IMPORTANT: config.php is protected by .htaccess and MUST NOT be committed to public git repositories.
+ */
+
+// Hostinger MySQL Database Credentials (from hPanel → Databases)
+define('DB_HOST_CONST', 'localhost');
+define('DB_NAME_CONST', 'u123456789_ibogaine_dao');  // Replace with Hostinger database name
+define('DB_USER_CONST', 'u123456789_ibogaine_user'); // Replace with Hostinger database user
+define('DB_PASS_CONST', 'REPLACE_WITH_STRONG_PASSWORD'); // Replace with Hostinger database password
+
+// Site Configuration
+define('SITE_URL',   'https://ibogaine.dao');     // Replace with your live domain URL
+define('SITE_NAME',  'IBOGAINE DAO');
+
+// Solana Blockchain Constants
+define('GAINE_MINT',    'ibozy4AxS6TdsBDerGJN1ZKFFohEubFdHWGcyLxPLFL');
+define('PROJECT_WALLET','GAinSTufAma6Z53W1EveJPYSXh2bJySw4k2kZ1TMoLF3');
+
+// Solana RPC Endpoint
+define('SOLANA_RPC',    'https://api.mainnet-beta.solana.com');

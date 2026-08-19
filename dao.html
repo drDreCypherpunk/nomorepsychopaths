@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="No More Psychopaths Autonomous Organization — A Global Tokenless, Permissionless, Governanceless NGO Enforced by Immutable Code." />
+  <title>Autonomous NGO Architecture — No More Psychopaths | Tokenless &amp; Governanceless</title>
+  
+  <!-- Fonts: Google Sans & Jost -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Jost:ital,wght@0,100..900;1,100..900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/animations.css" />
+
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js" defer></script>
+</head>
+<body>
+
+<!-- Scroll Progress Bar -->
+<div class="scroll-progress-bar" id="scroll-progress"></div>
+
+<!-- ═══════════════════════════════════════════
+     SITE HEADER
+═══════════════════════════════════════════ -->
+<header class="site-header" id="site-header">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo" aria-label="No More Psychopaths Home">
+      <div class="nav-logo-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+      </div>
+      <span class="nav-logo-text">NO MORE PSYCHOPATHS<span>.ORG</span></span>
+      <span class="nav-badge">AUTONOMOUS NGO</span>
+    </a>
+
+    <!-- Desktop Nav Links -->
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="../index.html">Overview</a>
+      <a href="../index.html#reframe">The Reframe</a>
+      <a href="../index.html#pillars">4 Pillars</a>
+      <a href="dao.html" class="active">Autonomous NGO</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+
+    <!-- Desktop CTA & Mobile Hamburger -->
+    <div style="display:flex;align-items:center;gap:0.75rem;">
+      <a href="../index.html#contact" class="btn btn-primary btn-sm hide-mobile" style="display:inline-flex;">
+        Join Movement
+      </a>
+      <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-drawer-overlay"></div>
+<aside class="mobile-drawer" aria-label="Mobile navigation drawer">
+  <div>
+    <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:2rem;">
+      <div class="nav-logo-icon" style="width:2rem;height:2rem;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <span style="font-family:var(--font-heading);font-weight:700;font-size:1.05rem;color:var(--text-main);">NO MORE PSYCHOPATHS</span>
+    </div>
+
+    <ul class="mobile-nav-menu">
+      <li><a href="../index.html"><span>Overview</span> <span>→</span></a></li>
+      <li><a href="../index.html#reframe"><span>The Reframe</span> <span>→</span></a></li>
+      <li><a href="../index.html#pillars"><span>4 Pillars</span> <span>→</span></a></li>
+      <li><a href="dao.html" class="active"><span>Autonomous NGO</span> <span>→</span></a></li>
+      <li><a href="../index.html#contact"><span>Contact Us</span> <span>→</span></a></li>
+    </ul>
+  </div>
+
+  <div>
+    <a href="mailto:no-more-psychopaths@protonmail.com" class="btn btn-primary" style="width:100%;margin-bottom:0.75rem;">
+      ✉ Contact Protocol Team
+    </a>
+    <div style="font-size:0.75rem;color:var(--text-muted);text-align:center;">
+      Tokenless · Permissionless · Pure Code Execution
+    </div>
+  </div>
+</aside>
+
+<!-- Mobile Floating Quick Action Pill (iPhone 16/17 & Pixel Flagship) -->
+<nav class="mobile-quick-bar" aria-label="Quick mobile actions">
+  <a href="../index.html#pillars" class="mobile-quick-btn">
+    <span>🏛️</span> 4 Pillars
+  </a>
+  <a href="#invariants" class="mobile-quick-btn">
+    <span>⚙️</span> Invariants
+  </a>
+  <a href="../index.html#contact" class="mobile-quick-btn primary">
+    <span>✉</span> Join
+  </a>
+</nav>
+
+<main>
+
+  <!-- ═══════════════════════════════════════════
+       HERO SECTION: AUTONOMOUS NGO ARCHITECTURE
+  ═══════════════════════════════════════════ -->
+  <section class="hero" style="min-height:75vh; min-height:75dvh; padding-top:clamp(6.5rem, 14vw, 8.5rem); padding-bottom:clamp(3.5rem, 8vw, 5rem);">
+    <canvas id="neural-canvas" class="hero-neural-canvas"></canvas>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span>⚙️</span> The Post-Governance Architecture · Pure Autonomous NGO
+      </div>
+
+      <h1 class="hero-title" style="max-width:54rem; margin-inline:auto;">
+        Tokenless. Permissionless. <span class="highlight">Governanceless.</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        A global NGO operating without tokens, shareholders, voting cabals, or human gatekeepers. <strong>Predetermined rules enforced strictly by immutable smart contracts.</strong>
+      </p>
+
+      <div style="display:inline-flex; align-items:center; gap:0.75rem; background:#FFFFFF; border:1px solid var(--border-warm); padding:0.75rem 1.5rem; border-radius:var(--radius-full); margin-top:0.5rem; box-shadow:0 4px 16px rgba(74,63,68,0.05); max-width:100%;">
+        <span style="font-family:var(--font-mono); font-size:clamp(0.72rem, 1.8vw, 0.875rem); color:var(--pink-deep); font-weight:600; text-align:center;">
+          No Token → No Shareholders → No Voting → No Gatekeepers → Code Enforced
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       EDITORIAL BANNER: THE INTEGRITY PROTOCOL
+  ═══════════════════════════════════════════ -->
+  <div style="position:relative;height:clamp(200px, 30vw, 240px);overflow:hidden;background:var(--bg-surface);border-block:1px solid var(--border-warm);">
+    <img src="../assets/images/integrity-hero.jpg" alt="Incorruptible Institutional Architecture" loading="lazy"
+      style="width:100%;height:100%;object-fit:cover;filter:brightness(0.85);opacity:0.4;">
+    <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.5rem;text-align:center;">
+      <div style="font-family:var(--font-mono);font-size:0.75rem;color:var(--pink-deep);margin-bottom:0.4rem;letter-spacing:0.12em;">INCORRUPTIBLE BY DESIGN</div>
+      <h2 style="margin:0 0 0.4rem;font-size:clamp(1.2rem,3vw,1.85rem);color:var(--text-main);">Why Traditional Governance Fails &amp; How We Fix It</h2>
+      <p style="margin:0;font-size:clamp(0.85rem, 1.8vw, 0.95rem);color:var(--text-body);max-width:540px;">When you introduce human voting tokens, manipulative actors accumulate stake to capture the treasury. By eliminating tokens and voting, we eliminate the attack surface entirely.</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 1: THE 4 INVARIANTS OF A TOKENLESS NGO
+  ═══════════════════════════════════════════ -->
+  <section class="section" id="invariants">
+    <div class="container">
+      <div style="text-align:center; max-width:48rem; margin-inline:auto; margin-bottom:3.5rem;">
+        <span class="section-label">Immutable Primitives</span>
+        <h2 class="section-title">The Four Autonomous Invariants</h2>
+        <p class="section-desc" style="margin-inline:auto;">
+          How a global humanitarian protocol functions without an executive board, central foundation, or speculative financial incentives.
+        </p>
+      </div>
+
+      <div class="grid-2" style="gap:2.5rem;">
+        <!-- Invariant 1 -->
+        <div class="card">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+            <div style="width:2.5rem;height:2.5rem;background:var(--pink-light);border-radius:var(--r-md);display:grid;place-items:center;color:var(--pink-deep);font-weight:700;font-family:var(--font-mono);">01</div>
+            <h3>Predetermined Treasury Routing</h3>
+          </div>
+          <p style="font-size:0.95rem;color:var(--text-body);">
+            100% of received grants and donations are routed via immutable smart contract splitters according to hard-coded constitutional proportions:
+          </p>
+          <ul class="feature-list" style="margin-top:0.75rem;">
+            <li><span class="check">▸</span> <strong>50% Gabon Sacred Wood Centers:</strong> Direct funding for legitimate, medically supervised iboga healing cohorts.</li>
+            <li><span class="check">▸</span> <strong>30% Open Anti-Capture Tooling:</strong> Free, open-source zk-proof development and smart-contract verification.</li>
+            <li><span class="check">▸</span> <strong>20% Independent Scientific Audits:</strong> Third-party replication and neuro-psychology research integrity.</li>
+          </ul>
+        </div>
+
+        <!-- Invariant 2 -->
+        <div class="card">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+            <div style="width:2.5rem;height:2.5rem;background:var(--pink-light);border-radius:var(--r-md);display:grid;place-items:center;color:var(--pink-deep);font-weight:700;font-family:var(--font-mono);">02</div>
+            <h3>Zero Governance Tokens</h3>
+          </div>
+          <p style="font-size:0.95rem;color:var(--text-body);">
+            There are no governance tokens, no speculative trading, no ICOs, and no VC allocations. Power cannot be accumulated, bought, or coerced by bad actors:
+          </p>
+          <ul class="feature-list" style="margin-top:0.75rem;">
+            <li><span class="check">▸</span> <strong>No Plutocracy:</strong> Wealth cannot buy decision-making power.</li>
+            <li><span class="check">▸</span> <strong>No Shareholder Extortion:</strong> No quarterly dividend pressure or financial capture.</li>
+            <li><span class="check">▸</span> <strong>Pure Public Good:</strong> The protocol operates identically for every human on Earth.</li>
+          </ul>
+        </div>
+
+        <!-- Invariant 3 -->
+        <div class="card">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+            <div style="width:2.5rem;height:2.5rem;background:var(--pink-light);border-radius:var(--r-md);display:grid;place-items:center;color:var(--pink-deep);font-weight:700;font-family:var(--font-mono);">03</div>
+            <h3>Unconditional Exit &amp; Forkability</h3>
+          </div>
+          <p style="font-size:0.95rem;color:var(--text-body);">
+            Any participant, sub-collective, or partner institution has the sovereign right to fork the open-source contracts and exit without penalty:
+          </p>
+          <ul class="feature-list" style="margin-top:0.75rem;">
+            <li><span class="check">▸</span> <strong>No Lock-In:</strong> Open code on IPFS ensures perpetual availability.</li>
+            <li><span class="check">▸</span> <strong>Rage-Quit Protection:</strong> Contributors can withdraw their unallocated support immediately if dissatisfaction arises.</li>
+            <li><span class="check">▸</span> <strong>Censorship-Resistant:</strong> Zero single points of administrative termination.</li>
+          </ul>
+        </div>
+
+        <!-- Invariant 4 -->
+        <div class="card">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+            <div style="width:2.5rem;height:2.5rem;background:var(--pink-light);border-radius:var(--r-md);display:grid;place-items:center;color:var(--pink-deep);font-weight:700;font-family:var(--font-mono);">04</div>
+            <h3>Continuous Cryptographic Legibility</h3>
+          </div>
+          <p style="font-size:0.95rem;color:var(--text-body);">
+            Every state transition, escrow milestone, and research grant release is cryptographically signed and publicly inspectable in real-time:
+          </p>
+          <ul class="feature-list" style="margin-top:0.75rem;">
+            <li><span class="check">▸</span> <strong>Zero-Knowledge Milestone Proofs:</strong> Verifying therapeutic outcomes without revealing patient private data.</li>
+            <li><span class="check">▸</span> <strong>Immutable Conflict Ledger:</strong> Automated structural conflict-of-interest detection.</li>
+            <li><span class="check">▸</span> <strong>Defensive Immune Layer:</strong> Open, legible, and uncorruptible.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 2: CODE SIMULATOR (PREDETERMINED RULES)
+  ═══════════════════════════════════════════ -->
+  <section class="section" style="background:var(--bg-surface);">
+    <div class="container">
+      <div style="text-align:center; max-width:48rem; margin-inline:auto; margin-bottom:2.5rem;">
+        <span class="section-label">Smart Contract Demonstration</span>
+        <h2 class="section-title">Predetermined Rule Execution</h2>
+        <p class="section-desc" style="margin-inline:auto;">
+          Observe how the smart contract executes automatic treasury distributions and conflict-checks based strictly on mathematical logic, requiring zero human intervention.
+        </p>
+      </div>
+
+      <div class="card" style="background:#FFFFFF; max-width:54rem; margin-inline:auto; padding:clamp(1.35rem, 3.5vw, 2.5rem);">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom:1.5rem; border-bottom:1px solid var(--border-warm); padding-bottom:1rem;">
+          <div>
+            <div style="font-family:var(--font-mono); font-size:0.8125rem; color:var(--pink-deep);">CONTRACT: IntegrityRouter.sol (Ethereum L2)</div>
+            <h3 style="margin-top:0.25rem;">Automated Execution Simulation</h3>
+          </div>
+          <button type="button" class="btn btn-primary btn-sm" onclick="runSimulation()">
+            ▶ Trigger Inflow Simulation
+          </button>
+        </div>
+
+        <div style="background:var(--bg-surface); border:1px solid var(--border-warm); border-radius:var(--r-md); padding:1.25rem; font-family:var(--font-mono); font-size:clamp(0.78rem, 1.8vw, 0.875rem); color:var(--text-main); line-height:1.7; overflow-x:auto;" id="sim-output">
+          <div style="color:var(--text-muted);">// System ready. Awaiting public donation or research grant...</div>
+          <div>[STATUS] Smart Contract Invariant Check: <span style="color:var(--accent-sage);">PASSED (100% Incorruptible)</span></div>
+          <div>[GOVERNANCE] Human Voting Token Weight: <span style="color:var(--pink-deep);">0.00% (Tokenless Invariant)</span></div>
+          <div>[REGISTRY] Defect / Surveillance Gate: <span style="color:var(--coral-alert);">DISABLED (Privacy zk-SNARK Only)</span></div>
+        </div>
+
+        <div class="grid-3" style="gap:1rem; margin-top:1.5rem; text-align:center;">
+          <div style="padding:1rem; background:var(--pink-light); border-radius:var(--r-md); border:1px solid rgba(200,125,123,0.3);">
+            <div style="font-size:0.75rem; font-family:var(--font-mono); color:var(--pink-deep);">GABON IBOGA ARM</div>
+            <strong id="stat-iboga" style="font-size:1.15rem; color:var(--rose-mauve);">50% Allocation</strong>
+          </div>
+          <div style="padding:1rem; background:var(--pink-light); border-radius:var(--r-md); border:1px solid rgba(200,125,123,0.3);">
+            <div style="font-size:0.75rem; font-family:var(--font-mono); color:var(--pink-deep);">ZK-PROOF TOOLING</div>
+            <strong id="stat-tooling" style="font-size:1.15rem; color:var(--rose-mauve);">30% Allocation</strong>
+          </div>
+          <div style="padding:1rem; background:var(--pink-light); border-radius:var(--r-md); border:1px solid rgba(200,125,123,0.3);">
+            <div style="font-size:0.75rem; font-family:var(--font-mono); color:var(--pink-deep);">SCIENTIFIC AUDITS</div>
+            <strong id="stat-audits" style="font-size:1.15rem; color:var(--rose-mauve);">20% Allocation</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 3: CONTACT & CALL FOR COLLABORATION
+  ═══════════════════════════════════════════ -->
+  <section class="section" id="contact">
+    <div class="container" style="text-align:center; max-width:44rem;">
+      <span class="section-label">Public Good Infrastructure</span>
+      <h2 class="section-title">Help Build The Immune System</h2>
+      <p class="section-desc" style="margin-inline:auto; margin-bottom:2rem;">
+        Developers, distributed systems architects, neuroscientists, ethicists, and institutional reformers — let’s talk.
+      </p>
+      <a href="mailto:no-more-psychopaths@protonmail.com" class="btn btn-primary btn-lg" style="width:100%;max-width:380px;">
+        ✉ no-more-psychopaths@protonmail.com
+      </a>
+      <div style="margin-top:1.25rem;">
+        <a href="../index.html" class="btn btn-outline btn-sm">← Back to Overview</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══════════════════════════════════════════
+     SITE FOOTER
+═══════════════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:2.5rem;">
+      <div style="max-width:24rem;">
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+          <div class="nav-logo-icon" style="background:rgba(255,255,255,0.08);border-color:var(--pink-burnt);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C87D7B" stroke-width="2.2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+          </div>
+          <span style="font-family:var(--font-heading);font-weight:700;font-size:1.2rem;color:#FAF7F2;">NO MORE PSYCHOPATHS</span>
+        </div>
+        <p style="font-size:0.9rem;color:#D6C7B7;line-height:1.6;">
+          Tokenless, permissionless autonomous public-good protocol. Predetermined rules enforced by code. Controlled by no one.
+        </p>
+      </div>
+
+      <div style="display:flex;gap:3rem;flex-wrap:wrap;">
+        <div>
+          <h5 style="color:#FAF7F2;font-size:0.95rem;margin-bottom:1rem;">Navigation</h5>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem;font-size:0.875rem;">
+            <li><a href="../index.html">Overview</a></li>
+            <li><a href="../index.html#reframe">The Reframe</a></li>
+            <li><a href="../index.html#pillars">4 Core Pillars</a></li>
+            <li><a href="dao.html">Autonomous NGO</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 style="color:#FAF7F2;font-size:0.95rem;margin-bottom:1rem;">Contact</h5>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem;font-size:0.875rem;">
+            <li><a href="mailto:no-more-psychopaths@protonmail.com">Email Direct</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 No More Psychopaths &amp; The Integrity Protocol. Autonomous Public Infrastructure.</div>
+      <div>Zero Tokens · Zero Shareholders · Zero Gatekeepers · Pure Code Execution</div>
+    </div>
+  </div>
+</footer>
+
+<!-- Simulation Engine Script -->
+<script>
+function runSimulation() {
+  const output = document.getElementById('sim-output');
+  output.innerHTML = `
+    <div style="color:var(--accent-sage);">[EVENT] Inbound Contribution: 10.00 ETH received at router contract</div>
+    <div style="color:var(--text-main);">[EXECUTION] Parsing immutable constitutional splitters (No human vote needed)...</div>
+    <div>▸ 5.00 ETH (50%) streamed to Gabon Sacred Wood Iboga Clinical Escrow</div>
+    <div>▸ 3.00 ETH (30%) streamed to Circom zk-Proof Verification Sub-Vault</div>
+    <div>▸ 2.00 ETH (20%) streamed to Blind Independent Re-testing Pool</div>
+    <div style="color:var(--accent-sage);font-weight:600;margin-top:0.35rem;">✓ Transaction Sealed on Ethereum L2 — Zero Gatekeeper Tampering Possible</div>
+  `;
+}
+</script>
+
+<!-- GSAP Motion Engine Loader -->
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+  var check = setInterval(function() {
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+      clearInterval(check);
+      var s = document.createElement('script');
+      s.src = '../js/motion.js';
+      document.body.appendChild(s);
+    }
+  }, 80);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-grad-amygdala" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070c1b" />
+      <stop offset="50%" stop-color="#0d172e" />
+      <stop offset="100%" stop-color="#132247" />
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="glow-coral" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="glow-cyan-amygdala" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Gradient Paths -->
+    <linearGradient id="reconsolidation-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff5e62" />
+      <stop offset="50%" stop-color="#7928ca" />
+      <stop offset="100%" stop-color="#00f2fe" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bg-grad-amygdala)" />
+
+  <!-- Cyber Grid -->
+  <g opacity="0.08" stroke="#00f2fe" stroke-width="1">
+    <path d="M0 75 H800 M0 150 H800 M0 225 H800 M0 300 H800 M0 375 H800" />
+    <path d="M100 0 V450 M200 0 V450 M300 0 V450 M400 0 V450 M500 0 V450 M600 0 V450 M700 0 V450" />
+  </g>
+
+  <!-- Split Zone Divider (Hyperactive vs Reconsolidated) -->
+  <line x1="400" y1="80" x2="400" y2="380" stroke="#7928ca" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.5"/>
+
+  <!-- Left Side: Hyperactive Amygdala Core (Trauma Response) -->
+  <g transform="translate(240, 230)" filter="url(#glow-coral)">
+    <!-- Expanding Threat Rings -->
+    <circle cx="0" cy="0" r="75" fill="none" stroke="#ff5e62" stroke-width="1.5" opacity="0.4" stroke-dasharray="4,6"/>
+    <circle cx="0" cy="0" r="55" fill="none" stroke="#ff0080" stroke-width="2" opacity="0.7"/>
+    <circle cx="0" cy="0" r="35" fill="none" stroke="#ff5e62" stroke-width="2.5"/>
+    
+    <!-- Amygdalar Core -->
+    <circle cx="0" cy="0" r="18" fill="#ff5e62" />
+    <circle cx="0" cy="0" r="8" fill="#ffffff" />
+
+    <!-- Spike Waveform Radiation (Hyperactivity Signals) -->
+    <path d="M -35 -35 L -55 -55 M 35 -35 L 55 -55 M -35 35 L -55 55 M 35 35 L 55 55" stroke="#ff5e62" stroke-width="2"/>
+  </g>
+
+  <!-- Right Side: Reconsolidated Amygdala Core (Iboga Attenuated) -->
+  <g transform="translate(560, 230)" filter="url(#glow-cyan-amygdala)">
+    <!-- Calm Harmonized Rings -->
+    <circle cx="0" cy="0" r="75" fill="none" stroke="#00f2fe" stroke-width="1" opacity="0.3"/>
+    <circle cx="0" cy="0" r="55" fill="none" stroke="#38ef7d" stroke-width="1.5" opacity="0.6"/>
+    <circle cx="0" cy="0" r="35" fill="none" stroke="#00f2fe" stroke-width="2"/>
+
+    <!-- Calmed Core -->
+    <circle cx="0" cy="0" r="16" fill="#0d172e" stroke="#00f2fe" stroke-width="3"/>
+    <circle cx="0" cy="0" r="6" fill="#38ef7d"/>
+  </g>
+
+  <!-- Reconsolidation Rewiring Vector (Bridging Left to Right) -->
+  <path d="M 240 230 C 320 140, 480 140, 560 230" 
+        fill="none" stroke="url(#reconsolidation-grad)" stroke-width="4" filter="url(#glow-cyan-amygdala)"/>
+  
+  <path d="M 240 230 C 320 320, 480 320, 560 230" 
+        fill="none" stroke="url(#reconsolidation-grad)" stroke-width="2" stroke-dasharray="6,4"/>
+
+  <!-- Waveform Comparison at Bottom -->
+  <!-- Left Waveform: Erratic PTSD Spikes -->
+  <path d="M 60 380 L 90 380 L 105 320 L 120 420 L 135 340 L 150 400 L 165 330 L 180 380 L 220 380 L 235 310 L 250 420 L 265 380 L 320 380" 
+        fill="none" stroke="#ff5e62" stroke-width="2.5" filter="url(#glow-coral)"/>
+
+  <!-- Right Waveform: Smooth Alpha/Theta Wave -->
+  <path d="M 480 380 Q 520 340 560 380 T 640 380 T 720 380" 
+        fill="none" stroke="#00f2fe" stroke-width="2.5" filter="url(#glow-cyan-amygdala)"/>
+
+  <!-- High-Tech Telemetry HUD & Header -->
+  <g font-family="'Space Grotesk', 'JetBrains Mono', sans-serif" fill="#94a3b8">
+    <text x="30" y="45" font-size="14" font-weight="700" fill="#00f2fe" letter-spacing="2">AMYGDALA HYPERACTIVITY // MEMORY RECONSOLIDATION</text>
+    <text x="30" y="65" font-size="11" fill="#64748b" letter-spacing="1">PTSD TRAUMA RE-ENCODING &amp; NORIBOGAINE SIGNAL DECOUPLING</text>
+
+    <!-- Center Bridge HUD Window -->
+    <rect x="300" y="100" width="200" height="42" rx="8" fill="#070c1b" stroke="#7928ca" stroke-width="1.5"/>
+    <text x="315" y="118" font-size="10" font-weight="700" fill="#f8fafc" letter-spacing="1">RECONSOLIDATION WINDOW</text>
+    <text x="315" y="133" font-size="10" fill="#38ef7d">6-HOUR LABILE STATE: ACTIVE</text>
+
+    <!-- Left Badge -->
+    <rect x="50" y="100" width="180" height="48" rx="6" fill="#0d172e" stroke="#ff5e62" stroke-width="1.5"/>
+    <text x="65" y="120" font-size="11" font-weight="700" fill="#ff5e62">Pre-Tx Amygdala</text>
+    <text x="65" y="137" font-size="10" fill="#94a3b8">Threat Reactivity: +340%</text>
+
+    <!-- Right Badge -->
+    <rect x="570" y="100" width="180" height="48" rx="6" fill="#0d172e" stroke="#00f2fe" stroke-width="1.5"/>
+    <text x="585" y="120" font-size="11" font-weight="700" fill="#00f2fe">Post-Tx Attenuation</text>
+    <text x="585" y="137" font-size="10" fill="#38ef7d">Fear Extinction: Normalized</text>
+
+    <!-- Bottom Left Signal Label -->
+    <text x="60" y="420" font-size="10" fill="#ff5e62" font-weight="600" letter-spacing="1">HYPERACTIVE TRAUMA SIGNAL (ERRATIC)</text>
+    <text x="480" y="420" font-size="10" fill="#00f2fe" font-weight="600" letter-spacing="1">RECONSOLIDATED ALPHA/THETA WAVE</text>
+  </g>
+</svg>

@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-grad-treasury" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070c1b" />
+      <stop offset="50%" stop-color="#0d172e" />
+      <stop offset="100%" stop-color="#132247" />
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="glow-gold" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="glow-cyan-treasury" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="glow-violet-treasury" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Metallic Gold/Cyan/Violet Gradients -->
+    <linearGradient id="gaine-gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd700" />
+      <stop offset="50%" stop-color="#00f2fe" />
+      <stop offset="100%" stop-color="#7928ca" />
+    </linearGradient>
+
+    <linearGradient id="laser-beam" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="50%" stop-color="#ff0080" />
+      <stop offset="100%" stop-color="#ffd700" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bg-grad-treasury)" />
+
+  <!-- Cyber Hexagonal Mesh Grid -->
+  <g opacity="0.08" stroke="#00f2fe" stroke-width="1">
+    <path d="M0 60 H800 M0 120 H800 M0 180 H800 M0 240 H800 M0 300 H800 M0 360 H800 M0 420 H800" />
+    <path d="M115 0 V450 M230 0 V450 M345 0 V450 M460 0 V450 M575 0 V450 M690 0 V450" />
+  </g>
+
+  <!-- Laser Vector Connections (Node Mesh) -->
+  <g stroke="url(#laser-beam)" stroke-width="2" filter="url(#glow-cyan-treasury)">
+    <!-- Central Treasury Hub to Satellite Nodes -->
+    <line x1="400" y1="225" x2="220" y2="130" stroke-width="2.5" />
+    <line x1="400" y1="225" x2="580" y2="130" stroke-width="2.5" />
+    <line x1="400" y1="225" x2="180" y2="290" stroke-width="2" />
+    <line x1="400" y1="225" x2="620" y2="290" stroke-width="2" />
+    <line x1="400" y1="225" x2="400" y2="370" stroke-width="3" />
+
+    <!-- Satellite Interconnections -->
+    <line x1="220" y1="130" x2="180" y2="290" stroke-dasharray="4,4" opacity="0.7"/>
+    <line x1="580" y1="130" x2="620" y2="290" stroke-dasharray="4,4" opacity="0.7"/>
+    <line x1="180" y1="290" x2="400" y2="370" />
+    <line x1="620" y1="290" x2="400" y2="370" />
+  </g>
+
+  <!-- Central GAINE Treasury Node Vault -->
+  <g transform="translate(400, 225)" filter="url(#glow-gold)">
+    <!-- Outer Orbit Rings -->
+    <circle cx="0" cy="0" r="90" fill="none" stroke="#ffd700" stroke-width="1.5" stroke-dasharray="12,6"/>
+    <circle cx="0" cy="0" r="75" fill="none" stroke="#00f2fe" stroke-width="2" stroke-dasharray="6,4"/>
+    <circle cx="0" cy="0" r="60" fill="none" stroke="#7928ca" stroke-width="2"/>
+
+    <!-- Central Hexagonal Vault Shape -->
+    <polygon points="0,-45 39,-22.5 39,22.5 0,45 -39,22.5 -39,-22.5" 
+             fill="#070c1b" stroke="url(#gaine-gold-grad)" stroke-width="3.5"/>
+    
+    <!-- GAINE Symbol Emblem inside Vault -->
+    <text x="0" y="10" font-family="'Space Grotesk', sans-serif" font-size="28" font-weight="800" 
+          fill="url(#gaine-gold-grad)" text-anchor="middle" letter-spacing="1">G</text>
+  </g>
+
+  <!-- Satellite Validator Nodes (On-Chain Neural Nodes) -->
+  <!-- Node 1: Top Left - Medical Research Pool -->
+  <g transform="translate(220, 130)" filter="url(#glow-cyan-treasury)">
+    <rect x="-35" y="-35" width="70" height="70" rx="12" fill="#0d172e" stroke="#00f2fe" stroke-width="2"/>
+    <circle cx="0" cy="0" r="14" fill="#070c1b" stroke="#00f2fe" stroke-width="1.5"/>
+    <circle cx="0" cy="0" r="5" fill="#00f2fe"/>
+  </g>
+
+  <!-- Node 2: Top Right - Gabon Decree 0239 Benefit Sharing -->
+  <g transform="translate(580, 130)" filter="url(#glow-gold)">
+    <rect x="-35" y="-35" width="70" height="70" rx="12" fill="#0d172e" stroke="#ffd700" stroke-width="2"/>
+    <circle cx="0" cy="0" r="14" fill="#070c1b" stroke="#ffd700" stroke-width="1.5"/>
+    <circle cx="0" cy="0" r="5" fill="#ffd700"/>
+  </g>
+
+  <!-- Node 3: Bottom Left - Retreat Certification Staking -->
+  <g transform="translate(180, 290)" filter="url(#glow-violet-treasury)">
+    <rect x="-35" y="-35" width="70" height="70" rx="12" fill="#0d172e" stroke="#7928ca" stroke-width="2"/>
+    <circle cx="0" cy="0" r="14" fill="#070c1b" stroke="#7928ca" stroke-width="1.5"/>
+    <circle cx="0" cy="0" r="5" fill="#ff0080"/>
+  </g>
+
+  <!-- Node 4: Bottom Right - Decentralized Clinical Trials -->
+  <g transform="translate(620, 290)" filter="url(#glow-cyan-treasury)">
+    <rect x="-35" y="-35" width="70" height="70" rx="12" fill="#0d172e" stroke="#38ef7d" stroke-width="2"/>
+    <circle cx="0" cy="0" r="14" fill="#070c1b" stroke="#38ef7d" stroke-width="1.5"/>
+    <circle cx="0" cy="0" r="5" fill="#38ef7d"/>
+  </g>
+
+  <!-- Node 5: Bottom Center - On-chain Treasury Vault -->
+  <g transform="translate(400, 370)" filter="url(#glow-gold)">
+    <rect x="-45" y="-20" width="90" height="40" rx="8" fill="#070c1b" stroke="#ffd700" stroke-width="2"/>
+    <text x="0" y="5" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#ffd700" text-anchor="middle">$14.2M</text>
+  </g>
+
+  <!-- Telemetry Annotations & Header -->
+  <g font-family="'Space Grotesk', 'JetBrains Mono', sans-serif" fill="#94a3b8">
+    <text x="30" y="45" font-size="14" font-weight="700" fill="#00f2fe" letter-spacing="2">ON-CHAIN NEURAL NODE TREASURY // GAINE DAO</text>
+    <text x="30" y="65" font-size="11" fill="#64748b" letter-spacing="1">DECENTRALIZED BENEFIT-SHARING &amp; CLINICAL RESEARCH ALLOCATION</text>
+
+    <!-- Node Labels -->
+    <text x="220" y="75" font-size="10" font-weight="700" fill="#00f2fe" text-anchor="middle">RESEARCH NODE 01</text>
+    <text x="580" y="75" font-size="10" font-weight="700" fill="#ffd700" text-anchor="middle">DECREE 0239 VAULT</text>
+    <text x="180" y="345" font-size="10" font-weight="700" fill="#7928ca" text-anchor="middle">RETREAT STAKING</text>
+    <text x="620" y="345" font-size="10" font-weight="700" fill="#38ef7d" text-anchor="middle">CLINICAL TRIALS</text>
+
+    <!-- Top Right Consensus Status -->
+    <rect x="570" y="25" width="200" height="38" rx="6" fill="#0d172e" stroke="#00f2fe" stroke-width="1"/>
+    <text x="585" y="48" font-size="10" font-weight="700" fill="#38ef7d" letter-spacing="1">SOLANA CONSENSUS: 99.8%</text>
+  </g>
+</svg>

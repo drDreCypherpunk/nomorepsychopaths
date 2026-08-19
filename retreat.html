@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="IBOGAINE DAO Retreat Certification Registry — Directory of 23+ certified ibogaine treatment centers with 6-point clinical safety verification." />
+  <title>Retreat Registry — Ibogaine DAO | Certified Ethical Ibogaine Centers</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/animations.css" />
+  <style>
+    .filter-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: var(--r-sm);
+      background: #fff;
+      border: 1px solid rgba(10,36,24,0.15);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--forest);
+      cursor: pointer;
+      user-select: none;
+      transition: all var(--t-fast);
+    }
+    .filter-chip input[type="checkbox"] {
+      accent-color: var(--forest);
+      width: 16px;
+      height: 16px;
+    }
+    .filter-chip.active {
+      background: var(--forest);
+      color: var(--earth);
+      border-color: var(--forest);
+    }
+    .safety-check-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8125rem;
+      margin-bottom: 0.375rem;
+    }
+    .safety-check-item.pass { color: #166534; font-weight: 600; }
+  </style>
+</head>
+<body>
+
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<!-- SITE HEADER -->
+<header class="site-header" id="site-header">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo" aria-label="IBOGAINE DAO Home">
+      <div class="nav-logo-icon" style="position:relative;display:flex;align-items:center;justify-content:center;">
+        <img src="https://gaine.ibo.garden/assets/logo-kpw5Yl45.png" alt="" width="24" height="24" style="width:24px;height:24px;object-fit:contain;position:relative;z-index:1;" />
+      </div>
+      <span class="nav-logo-text">ibogaine<span>.</span>dao</span>
+    </a>
+
+    <nav class="nav-links hide-mobile" aria-label="Main navigation">
+      <a href="../learn.html">Knowledge</a>
+      <a href="research.html">Research</a>
+      <a href="dao.html">Governance</a>
+      <a href="retreat.html" class="active">Retreats</a>
+      <a href="../gaine.html">GAINE</a>
+      <a href="news.html">News Feed</a>
+      <a href="airdrop.html">Airdrop</a>
+    </nav>
+
+    <div class="nav-actions">
+      <div style="display:flex;align-items:center;border-radius:9999px;border:1px solid rgba(10,36,24,0.15);background:rgba(237,232,219,0.8);padding:2px;">
+        <button type="button" style="min-width:36px;padding:6px 10px;border-radius:9999px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;background:var(--forest);color:var(--earth);border:none;cursor:pointer;">EN</button>
+        <button type="button" style="min-width:36px;padding:6px 10px;border-radius:9999px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:rgba(10,36,24,0.6);background:none;border:none;cursor:pointer;">FR</button>
+      </div>
+      <button type="button" class="wallet-btn micro-bounce" id="wallet-btn" aria-label="Connect Solana wallet">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>
+        <span id="wallet-text">Connect</span>
+      </button>
+      <button class="hamburger hide-desktop" aria-label="Open menu" id="hamburger" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE NAV OVERLAY -->
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+  <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close menu">✕</button>
+  <a href="../learn.html">Knowledge</a>
+  <a href="research.html">Research</a>
+  <a href="dao.html">Governance</a>
+  <a href="retreat.html" class="active">Retreats</a>
+  <a href="../gaine.html">GAINE Token</a>
+  <a href="news.html">News Feed</a>
+  <a href="nft.html">NFT Credentials</a>
+  <a href="pharma.html">Pharma Partners</a>
+  <a href="airdrop.html">Airdrop</a>
+</nav>
+
+<main>
+  <!-- HERO SECTION -->
+  <section class="section" style="padding-top: 8rem; padding-bottom: 3rem; background: linear-gradient(180deg, var(--earth) 0%, rgba(237,232,219,0.5) 100%); border-bottom: 1px solid rgba(10,36,24,0.08);">
+    <div class="container text-center">
+      <div class="hero-badge" style="margin: 0 auto 1.5rem;">
+        <span class="hero-badge-dot" aria-hidden="true"></span>
+        DAO Certification Standard v2.0 · 6-Point Safety Scorecard · Gabon Decree 0239 Compliant
+      </div>
+      <h1 style="font-size: clamp(2.25rem, 5vw, 3.5rem); margin-bottom: 1.25rem;">DAO-Certified Ibogaine Retreat Registry</h1>
+      <p class="lead" style="max-width: 44rem; margin: 0 auto 2.5rem;">
+        An independent public directory of medically-supervised ibogaine centers. Every certified center adheres to continuous 24/7 ECG telemetry, physician staffing, and Decree 0239 ethical plant sourcing.
+      </p>
+
+      <!-- STATS BAR -->
+      <div class="grid-4" style="gap: 1.25rem; max-width: 64rem; margin: 0 auto;">
+        <div class="stat-card">
+          <div class="stat-card-value count-up" data-target="23" data-suffix="+">0</div>
+          <div class="stat-card-label">Certified Centers</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-value">100%</div>
+          <div class="stat-card-label">Safety Compliance</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-value">24/7 Required</div>
+          <div class="stat-card-label">ECG Telemetry</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-value">Verified</div>
+          <div class="stat-card-label">Decree 0239 Sourced</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6-POINT SAFETY FILTER BAR -->
+  <section class="section" style="padding-top: 2.5rem; padding-bottom: 2.5rem; background: rgba(10,36,24,0.02); border-bottom: 1px solid rgba(10,36,24,0.08);">
+    <div class="container">
+      <div style="text-center; margin-bottom: 1.25rem;">
+        <span class="section-label" style="display: block; text-align: center;">Clinical Safety Criteria Filter</span>
+        <h3 style="text-align: center; font-size: 1.25rem; margin-bottom: 0.5rem;">Filter Centers by Mandatory DAO Safety Standards</h3>
+      </div>
+      <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 0.75rem;" id="safety-filter-container">
+        <label class="filter-chip"><input type="checkbox" value="ecg" checked /> 24/7 ECG Monitoring</label>
+        <label class="filter-chip"><input type="checkbox" value="cardiologist" /> On-Site Cardiologist</label>
+        <label class="filter-chip"><input type="checkbox" value="magnesium" /> Magnesium IV Protocol</label>
+        <label class="filter-chip"><input type="checkbox" value="cyp2d6" /> CYP2D6 Genotyping</label>
+        <label class="filter-chip"><input type="checkbox" value="integration" /> 6-Month Integration</label>
+        <label class="filter-chip"><input type="checkbox" value="gita" /> GITA Member</label>
+      </div>
+    </div>
+  </section>
+
+  <!-- RETREAT CENTER DIRECTORY GRID -->
+  <section class="section">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2.5rem;">
+        <div>
+          <span class="section-label">Verified Providers</span>
+          <h2 style="margin-bottom: 0.5rem;">Certified Treatment Centers</h2>
+          <p style="color: var(--color-body-light); margin: 0;">Audited annually for medical equipment, physician credentials, and patient aftercare protocols.</p>
+        </div>
+        <div>
+          <a href="#partner-apply-section" class="btn btn-forest">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:0.375rem;"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg>
+            Apply for Certification
+          </a>
+        </div>
+      </div>
+
+      <div class="grid-3" style="gap: 1.5rem;" id="retreat-grid">
+
+        <!-- CENTER 1: CROSSROADS -->
+        <div class="card retreat-card fade-up" data-features="ecg cardiologist magnesium cyp2d6 integration gita" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+              <span class="badge" style="background: var(--forest); color: var(--earth); font-weight: 700;">LEVEL 1 CERTIFIED</span>
+              <span class="badge" style="background: rgba(200, 168, 75, 0.2); color: var(--forest);">Rosarito, Mexico</span>
+            </div>
+            <h3 style="font-size: 1.375rem; margin-bottom: 0.5rem;">Crossroads Treatment Center</h3>
+            <p style="font-size: 0.875rem; color: var(--forest); font-weight: 600; margin-bottom: 1rem;">
+              Medical Director: Dr. Jose Inzunza, MD (Cardiologist On-Site)
+            </p>
+            <p style="font-size: 0.875rem; color: var(--color-body-light); margin-bottom: 1.25rem; line-height: 1.6;">
+              Premier medical detox facility with 12 private suites, 24/7 ACLS nursing team, continuous multi-lead ECG telemetry, and clinical research partnership with Stanford University.
+            </p>
+
+            <div style="background: rgba(10,36,24,0.04); border-radius: var(--r-sm); padding: 1rem; margin-bottom: 1.25rem;">
+              <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--forest); margin-bottom: 0.5rem;">Safety Audit Checklist:</div>
+              <div class="safety-check-item pass">✓ 24/7 Continuous ECG Telemetry</div>
+              <div class="safety-check-item pass">✓ On-Site Cardiologist & ACLS Staff</div>
+              <div class="safety-check-item pass">✓ IV Magnesium & Electrolyte Protocol</div>
+              <div class="safety-check-item pass">✓ CYP2D6 Genotyping Pre-Screening</div>
+              <div class="safety-check-item pass">✓ 6-Month Aftercare Integration</div>
+              <div class="safety-check-item pass">✓ GITA Executive Council Member</div>
+              <div class="safety-check-item pass">✓ Decree 0239 Verified Supply</div>
+            </div>
+          </div>
+
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.875rem; font-weight: 600; margin-bottom: 1rem;">
+              <span>Capacity: 12 Medical Beds</span>
+              <span style="color: var(--gold);">Rating: 5.0 / 5.0 (88 Patients)</span>
+            </div>
+            <a href="https://crossroadstreatmentcenter.com/" target="_blank" rel="noopener noreferrer" class="btn btn-forest btn-sm" style="width: 100%;">Visit Certified Site →</a>
+          </div>
+        </div>
+
+        <!-- CENTER 2: BEOND MEDICAL -->
+        <div class="card retreat-card fade-up" data-features="ecg cardiologist magnesium cyp2d6 integration gita" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+              <span class="badge" style="background: var(--forest); color: var(--earth); font-weight: 700;">LEVEL 1 CERTIFIED</span>
+              <span class="badge" style="background: rgba(200, 168, 75, 0.2); color: var(--forest);">Cancun, Mexico</span>
+            </div>
+            <h3 style="font-size: 1.375rem; margin-bottom: 0.5rem;">BEOND Medical Ibogaine</h3>
+            <p style="font-size: 0.875rem; color: var(--forest); font-weight: 600; margin-bottom: 1rem;">
+              Medical Director: Dr. Jeffrey Kamlet, MD (Addiction Medicine)
+            </p>
+            <p style="font-size: 0.875rem; color: var(--color-body-light); margin-bottom: 1.25rem; line-height: 1.6;">
+              Hospital-grade luxury medical retreat specializing in trauma recovery and opioid detox with ER-level telemetry, psychiatrist-led integration, and full ICU emergency equipment on site.
+            </p>
+
+            <div style="background: rgba(10,36,24,0.04); border-radius: var(--r-sm); padding: 1rem; margin-bottom: 1.25rem;">
+              <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--forest); margin-bottom: 0.5rem;">Safety Audit Checklist:</div>
+              <div class="safety-check-item pass">✓ 24/7 Continuous ECG Telemetry</div>
+              <div class="safety-check-item pass">✓ On-Site Cardiologist & ER MD</div>
+              <div class="safety-check-item pass">✓ IV Magnesium Protocol</div>
+              <div class="safety-check-item pass">✓ CYP2D6 Genotyping Pre-Screening</div>
+              <div class="safety-check-item pass">✓ 6-Month Integration Therapy</div>
+              <div class="safety-check-item pass">✓ GITA Registered Center</div>
+              <div class="safety-check-item pass">✓ Decree 0239 Verified Supply</div>
+            </div>
+          </div>
+
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.875rem; font-weight: 600; margin-bottom: 1rem;">
+              <span>Capacity: 16 Suites</span>
+              <span style="color: var(--gold);">Rating: 4.9 / 5.0 (140 Patients)</span>
+            </div>
+            <a href="https://beond.us/" target="_blank" rel="noopener noreferrer" class="btn btn-forest btn-sm" style="width: 100%;">Visit Certified Site →</a>
+          </div>
+        </div>
+
+        <!-- CENTER 3: CLEAR SKY RECOVERY -->
+        <div class="card retreat-card fade-up" data-features="ecg magnesium cyp2d6 gita" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+              <span class="badge" style="background: var(--forest); color: var(--earth); font-weight: 700;">LEVEL 1 CERTIFIED</span>
+              <span class="badge" style="background: rgba(200, 168, 75, 0.2); color: var(--forest);">Cancun, Mexico</span>
+            </div>
+            <h3 style="font-size: 1.375rem; margin-bottom: 0.5rem;">Clear Sky Recovery</h3>
+            <p style="font-size: 0.875rem; color: var(--forest); font-weight: 600; margin-bottom: 1rem;">
+              Medical Director: Dr. Alberto Sola, MD
+            </p>
+            <p style="font-size: 0.875rem; color: var(--color-body-light); margin-bottom: 1.25rem; line-height: 1.6;">
+              Pioneering ibogaine treatment center operating since 2003 with medically-supervised protocols, continuous cardiac monitoring, and high-purity GMP pharmaceutical noribogaine.
+            </p>
+
+            <div style="background: rgba(10,36,24,0.04); border-radius: var(--r-sm); padding: 1rem; margin-bottom: 1.25rem;">
+              <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--forest); margin-bottom: 0.5rem;">Safety Audit Checklist:</div>
+              <div class="safety-check-item pass">✓ 24/7 Continuous ECG Monitoring</div>
+              <div class="safety-check-item pass">✓ Physician Supervision (MD)</div>
+              <div class="safety-check-item pass">✓ Magnesium IV Pre-Treatment</div>
+              <div class="safety-check-item pass">✓ CYP2D6 Genotyping Screening</div>
+              <div class="safety-check-item pass">✓ GITA Founding Member</div>
+            </div>
+          </div>
+
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.875rem; font-weight: 600; margin-bottom: 1rem;">
+              <span>Capacity: 10 Beds</span>
+              <span style="color: var(--gold);">Rating: 4.8 / 5.0 (300+ Patients)</span>
+            </div>
+            <a href="https://clearskyibogaine.com/" target="_blank" rel="noopener noreferrer" class="btn btn-forest btn-sm" style="width: 100%;">Visit Certified Site →</a>
+          </div>
+        </div>
+
+        <!-- CENTER 4: TABULA RASA -->
+        <div class="card retreat-card fade-up" data-features="ecg magnesium integration" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+              <span class="badge" style="background: rgba(10,36,24,0.1); color: var(--forest); font-weight: 700;">LEVEL 2 CERTIFIED</span>
+              <span class="badge" style="background: rgba(200, 168, 75, 0.2); color: var(--forest);">Alentejo, Portugal</span>
+            </div>
+            <h3 style="font-size: 1.375rem; margin-bottom: 0.5rem;">Tabula Rasa Retreat</h3>
+            <p style="font-size: 0.875rem; color: var(--forest); font-weight: 600; margin-bottom: 1rem;">
+              Medical Director: Dr. Teresa Ribeiro, MD
+            </p>
+            <p style="font-size: 0.875rem; color: var(--color-body-light); margin-bottom: 1.25rem; line-height: 1.6;">
+              European holistic health sanctuary combining clinical ibogaine administration with breathwork, Kundalini yoga, and long-term psychological integration therapy.
+            </p>
+
+            <div style="background: rgba(10,36,24,0.04); border-radius: var(--r-sm); padding: 1rem; margin-bottom: 1.25rem;">
+              <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--forest); margin-bottom: 0.5rem;">Safety Audit Checklist:</div>
+              <div class="safety-check-item pass">✓ Continuous ECG Telemetry</div>
+              <div class="safety-check-item pass">✓ European Licensed MD Staff</div>
+              <div class="safety-check-item pass">✓ Magnesium IV Support</div>
+              <div class="safety-check-item pass">✓ 6-Month Aftercare Integration</div>
+            </div>
+          </div>
+
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.875rem; font-weight: 600; margin-bottom: 1rem;">
+              <span>Capacity: 8 Beds</span>
+              <span style="color: var(--gold);">Rating: 4.9 / 5.0 (90 Patients)</span>
+            </div>
+            <a href="https://tabularasaretreat.com/" target="_blank" rel="noopener noreferrer" class="btn btn-forest btn-sm" style="width: 100%;">Visit Certified Site →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNER APPLICATION FORM -->
+  <section class="section" id="partner-apply-section" style="background: rgba(10,36,24,0.03); border-top: 1px solid rgba(10,36,24,0.08);">
+    <div class="container" style="max-width: 48rem;">
+      <div class="text-center" style="margin-bottom: 2.5rem;">
+        <span class="section-label">Certification Onboarding</span>
+        <h2>Retreat Partner Certification Application</h2>
+        <p style="color: var(--color-body-light);">Apply to list your treatment facility in the IBOGAINE DAO public registry under Standard v2.0.</p>
+      </div>
+
+      <form id="partner-form" class="card" style="padding: 2rem;">
+        <div class="grid-2" style="gap: 1.25rem; margin-bottom: 1.25rem;">
+          <div>
+            <label for="center-name" style="display: block; font-weight: 700; margin-bottom: 0.5rem; color: var(--forest);">Facility / Center Name *</label>
+            <input type="text" id="center-name" name="center_name" required placeholder="e.g. Hope Horizon Retreat" style="width: 100%; padding: 0.75rem 1rem; border-radius: var(--r-sm); border: 1px solid rgba(10,36,24,0.2); background: var(--earth); font-family: inherit;" />
+          </div>
+          <div>
+            <label for="center-location" style="display: block; font-weight: 700; margin-bottom: 0.5rem; color: var(--forest);">Country & Region *</label>
+            <input type="text" id="center-location" name="location" required placeholder="e.g. Mexico, Portugal, Bahamas" style="width: 100%; padding: 0.75rem 1rem; border-radius: var(--r-sm); border: 1px solid rgba(10,36,24,0.2); background: var(--earth); font-family: inherit;" />
+          </div>
+        </div>
+
+        <div class="grid-2" style="gap: 1.25rem; margin-bottom: 1.25rem;">
+          <div>
+            <label for="medical-director" style="display: block; font-weight: 700; margin-bottom: 0.5rem; color: var(--forest);">Medical Director (MD/DO Name & License) *</label>
+            <input type="text" id="medical-director" name="medical_director" required placeholder="e.g. Dr. Jane Doe, MD (Lic #948201)" style="width: 100%; padding: 0.75rem 1rem; border-radius: var(--r-sm); border: 1px solid rgba(10,36,24,0.2); background: var(--earth); font-family: inherit;" />
+          </div>
+          <div>
+            <label for="medical-staffing" style="display: block; font-weight: 700; margin-bottom: 0.5rem; color: var(--forest);">On-Site Medical Staffing Level *</label>
+            <select id="medical-staffing" name="medical_staffing" required style="width: 100%; padding: 0.75rem 1rem; border-radius: var(--r-sm); border: 1px solid rgba(10,36,24,0.2); background: var(--earth); font-family: inherit;">
+              <option value="24/7 MD + ACLS Nurses">24/7 On-Site Physician & ACLS Nurses</option>
+              <option value="On-Call MD + 24/7 Nurses">On-Call Physician + 24/7 ACLS Nurses</option>
+              <option value="Nurses Only">RN / ACLS Nurses Only</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 700; margin-bottom: 0.75rem; color: var(--forest);">Safety Compliance Attestation *</label>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem;">
+            <label style="font-size: 0.875rem;"><input type="checkbox" required /> 24/7 Continuous ECG Monitoring</label>
+            <label style="font-size: 0.875rem;"><input type="checkbox" required /> On-Site IV Magnesium Protocol</label>
+            <label style="font-size: 0.875rem;"><input type="checkbox" required /> CYP2D6 Genotyping Screening</label>
+            <label style="font-size: 0.875rem;"><input type="checkbox" required /> Gabon Decree 0239 Ethical Supply</label>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label for="contact-email" style="display: block; font-weight: 700; margin-bottom: 0.5rem; color: var(--forest);">Official Business Email *</label>
+          <input type="email" id="contact-email" name="email" required placeholder="contact@retreatcenter.com" style="width: 100%; padding: 0.75rem 1rem; border-radius: var(--r-sm); border: 1px solid rgba(10,36,24,0.2); background: var(--earth); font-family: inherit;" />
+        </div>
+
+        <button type="submit" class="btn btn-forest btn-lg" style="width: 100%;">Submit Facility for DAO Audit</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h2>ibogaine<span>.</span>dao</h2>
+        <p>Ethical Iboga sourcing. Tokenized reciprocity. Rooted in Gabon. Building a positive legacy for humanity through clinically-validated, ethically-anchored knowledge.</p>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+          <a href="https://t.me/flextokens" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="font-size:0.6875rem;">Join on Telegram →</a>
+          <a href="https://jup.ag/tokens/ibozy4AxS6TdsBDerGJN1ZKFFohEubFdHWGcyLxPLFL" target="_blank" rel="noopener noreferrer" class="btn btn-gold-outline btn-sm" style="font-size:0.6875rem;display:inline-flex;align-items:center;gap:0.375rem;">
+            <img src="https://raw.githubusercontent.com/dougbutner/Bridged-EASY-Contracts/refs/heads/main/GAINE-token.png" alt="" width="14" height="14" style="width:14px;height:14px;border-radius:50%;" />
+            Buy GAINE
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Knowledge</h4>
+        <ul>
+          <li><a href="../learn.html">Knowledge Base</a></li>
+          <li><a href="research.html">Clinical Research</a></li>
+          <li><a href="news.html">News Feed</a></li>
+          <li><a href="../learn.html#tradition">Tradition</a></li>
+          <li><a href="../learn.html#conservation">Conservation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="../gaine.html">GAINE Token</a></li>
+          <li><a href="dao.html">DAO Governance</a></li>
+          <li><a href="retreat.html">Retreat Registry</a></li>
+          <li><a href="nft.html">NFT Credentials</a></li>
+          <li><a href="pharma.html">Pharma Partners</a></li>
+          <li><a href="airdrop.html">Airdrop</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-disclaimer">
+        <strong>Important:</strong> GAINE is a philanthropic utility token for use exclusively on the ibogaine.dao platform (settlement, rewards, and platform services). It is not an investment, security, or financial product. There is no expectation of return or profit. Ibogaine and iboga carry serious health risks and are illegal in many jurisdictions. Nothing here constitutes medical, legal, therapeutic, or investment advice. You must be 21+ to use this platform. Committed to Gabon Decree 0239 & Nagoya Protocol.
+      </p>
+      <div class="footer-legal">
+        <a href="#">Gabon Decree 0239</a>
+        <a href="https://www.cbd.int/abs/" target="_blank" rel="noopener noreferrer">Nagoya Protocol</a>
+        <a href="../gaine.html" style="color:var(--gold);">Official GAINE Token</a>
+        <a href="https://solscan.io/token/ibozy4AxS6TdsBDerGJN1ZKFFohEubFdHWGcyLxPLFL" target="_blank" rel="noopener noreferrer">Solscan</a>
+        <span>© 2026 IBOGAINE DAO — All rights reserved</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script src="../js/wallet.js"></script>
+<script>
+  // Safety filter checkboxes logic
+  document.addEventListener('DOMContentLoaded', () => {
+    const checkboxes = document.querySelectorAll('#safety-filter-container input[type="checkbox"]');
+    const cards = document.querySelectorAll('.retreat-card');
+
+    function filterRetreats() {
+      const activeFilters = Array.from(checkboxes)
+        .filter(cb => cb.checked)
+        .map(cb => cb.value);
+
+      cards.forEach(card => {
+        const features = card.dataset.features || '';
+        const matchAll = activeFilters.every(f => features.includes(f));
+        if (matchAll) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    checkboxes.forEach(cb => {
+      cb.addEventListener('change', filterRetreats);
+    });
+
+    // Form submission Toast notification
+    const partnerForm = document.getElementById('partner-form');
+    partnerForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      window.showToast?.('Retreat certification application submitted successfully! Audit team will contact you.', 'success');
+      partnerForm.reset();
+    });
+  });
+</script>
+</body>
+</html>

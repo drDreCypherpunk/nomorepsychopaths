@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="IBOGAINE DAO GAINE Token Airdrop Portal — Season 1 claim portal, tier breakdown (Bronze to Diamond), live Solana wallet eligibility checker." />
+  <title>GAINE Airdrop — Ibogaine DAO | Season 1 Claim Portal</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/gaine.css" />
+  <link rel="stylesheet" href="../css/animations.css" />
+</head>
+<body class="gaine-page">
+
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<!-- SITE HEADER -->
+<header class="site-header" id="site-header">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo" aria-label="IBOGAINE DAO Home">
+      <div class="nav-logo-icon" style="position:relative;display:flex;align-items:center;justify-content:center;">
+        <img src="https://gaine.ibo.garden/assets/logo-kpw5Yl45.png" alt="" width="24" height="24" style="width:24px;height:24px;object-fit:contain;position:relative;z-index:1;" />
+      </div>
+      <span class="nav-logo-text">ibogaine<span>.</span>dao</span>
+    </a>
+
+    <nav class="nav-links hide-mobile" aria-label="Main navigation">
+      <a href="../learn.html">Knowledge</a>
+      <a href="research.html">Research</a>
+      <a href="dao.html">Governance</a>
+      <a href="retreat.html">Retreats</a>
+      <a href="../gaine.html">GAINE</a>
+      <a href="news.html">News Feed</a>
+      <a href="airdrop.html" class="active">Airdrop</a>
+    </nav>
+
+    <div class="nav-actions">
+      <div style="display:flex;align-items:center;border-radius:9999px;border:1px solid rgba(255,255,255,0.15);background:rgba(13,31,23,0.8);padding:2px;">
+        <button type="button" style="min-width:36px;padding:6px 10px;border-radius:9999px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;background:var(--gaine-accent);color:var(--gaine-bg);border:none;cursor:pointer;">EN</button>
+        <button type="button" style="min-width:36px;padding:6px 10px;border-radius:9999px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:rgba(232,240,220,0.6);background:none;border:none;cursor:pointer;">FR</button>
+      </div>
+      <button type="button" class="wallet-btn micro-bounce" id="wallet-btn" aria-label="Connect Solana wallet">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>
+        <span id="wallet-text">Connect</span>
+      </button>
+      <button class="hamburger hide-desktop" aria-label="Open menu" id="hamburger" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE NAV OVERLAY -->
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+  <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close menu">✕</button>
+  <a href="../learn.html">Knowledge</a>
+  <a href="research.html">Research</a>
+  <a href="dao.html">Governance</a>
+  <a href="retreat.html">Retreats</a>
+  <a href="../gaine.html">GAINE Token</a>
+  <a href="news.html">News Feed</a>
+  <a href="nft.html">NFT Credentials</a>
+  <a href="pharma.html">Pharma Partners</a>
+  <a href="airdrop.html" class="active">Airdrop</a>
+</nav>
+
+<main>
+  <!-- HERO SECTION -->
+  <section class="gaine-hero" style="padding-top: 8rem; padding-bottom: 4rem;">
+    <div style="max-width: 52rem; margin: 0 auto; text-align: center; position: relative; z-index: 2;">
+      <span class="gaine-hero-tag">GAINE Season 1 · Tokenized Reciprocity · 2x Early Holder Multiplier</span>
+      
+      <h1 class="gaine-display" style="font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 1.25rem;">
+        GAINE Token Airdrop & Reciprocal Rewards
+      </h1>
+      <p class="lead" style="color: rgba(232, 240, 220, 0.8); max-width: 44rem; margin: 0 auto 2.5rem;">
+        Hold GAINE in your Solana wallet to qualify for quarterly treasury distributions, governance voting multipliers, and Gabon conservation reciprocity rewards under Decree 0239.
+      </p>
+
+      <!-- STATS BAR -->
+      <div class="grid-4" style="gap: 1.25rem; max-width: 64rem; margin: 0 auto;">
+        <div class="stat-card" style="background: rgba(13,31,23,0.8); border: 1px solid var(--gaine-border);">
+          <div class="stat-card-value" style="color: var(--gaine-accent);">5,000,000</div>
+          <div class="stat-card-label" style="color: rgba(232,240,220,0.6);">Season 1 Pool</div>
+        </div>
+        <div class="stat-card" style="background: rgba(13,31,23,0.8); border: 1px solid var(--gaine-border);">
+          <div class="stat-card-value count-up" data-target="3820" data-suffix="+" style="color: var(--gaine-accent);">0</div>
+          <div class="stat-card-label" style="color: rgba(232,240,220,0.6);">Eligible Wallets</div>
+        </div>
+        <div class="stat-card" style="background: rgba(13,31,23,0.8); border: 1px solid var(--gaine-border);">
+          <div class="stat-card-value" style="color: var(--gaine-accent);">2.0x Max</div>
+          <div class="stat-card-label" style="color: rgba(232,240,220,0.6);">Diamond Multiplier</div>
+        </div>
+        <div class="stat-card" style="background: rgba(13,31,23,0.8); border: 1px solid var(--gaine-border);">
+          <div class="stat-card-value" style="color: var(--gaine-accent);">25% Reserved</div>
+          <div class="stat-card-label" style="color: rgba(232,240,220,0.6);">Gabon ABS Fund</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE WALLET ELIGIBILITY CHECKER CONTAINER -->
+  <section class="section" style="padding-top: 2rem; padding-bottom: 4rem;">
+    <div class="container" style="max-width: 48rem;">
+      <div class="text-center" style="margin-bottom: 2rem;">
+        <span class="section-label" style="color: var(--gaine-accent);">Claim Portal</span>
+        <h2 style="color: var(--gaine-text);">Live Wallet Eligibility Checker</h2>
+        <p style="color: rgba(232,240,220,0.7);">Connect your Solana wallet to verify your tier multiplier and claim Season 1 rewards.</p>
+      </div>
+
+      <div id="airdrop-checker-container" class="card" style="background: rgba(13,31,23,0.9); border: 1.5px solid var(--gaine-border); padding: 2.5rem; text-align: center; color: var(--gaine-text); border-radius: var(--r-md);">
+        
+        <!-- DISCONNECTED STATE -->
+        <div class="wallet-disconnected-only">
+          <div style="font-size: 3.5rem; margin-bottom: 1rem;">💎</div>
+          <h3 style="color: var(--gaine-text); margin-bottom: 0.75rem;">Check Your Airdrop Eligibility</h3>
+          <p style="color: rgba(232,240,220,0.7); max-width: 28rem; margin: 0 auto 2rem; line-height: 1.6;">
+            Connect your Phantom, Backpack, or Solflare wallet to query your GAINE balance and tier allocation.
+          </p>
+          <button type="button" class="btn btn-gold btn-lg" id="airdrop-wallet-connect">Connect Solana Wallet</button>
+        </div>
+
+        <!-- CONNECTED STATE -->
+        <div class="wallet-connected-only" hidden>
+          <div style="font-size: 3.5rem; margin-bottom: 1rem;">🎉</div>
+          <h3 style="color: var(--gaine-text); margin-bottom: 0.5rem;">Wallet Connected & Verified</h3>
+          <div style="font-family: var(--font-mono); font-size: 0.9375rem; color: var(--gaine-accent); background: rgba(168,201,106,0.1); border: 1px solid rgba(168,201,106,0.2); padding: 0.625rem 1.25rem; border-radius: 9999px; display: inline-block; margin-bottom: 2rem;" class="wallet-address-display">
+            —
+          </div>
+
+          <div class="grid-3" style="gap: 1rem; text-align: center; margin-bottom: 2rem;">
+            <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--gaine-border); border-radius: var(--r-sm); padding: 1.25rem;">
+              <span style="font-size: 0.75rem; color: rgba(232,240,220,0.6); display: block; margin-bottom: 0.375rem;">Holdings</span>
+              <strong style="color: var(--gaine-accent); font-size: 1.25rem; display: block;" class="gaine-balance-display">0 GAINE</strong>
+            </div>
+            <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--gaine-border); border-radius: var(--r-sm); padding: 1.25rem;">
+              <span style="font-size: 0.75rem; color: rgba(232,240,220,0.6); display: block; margin-bottom: 0.375rem;">Reward Tier</span>
+              <strong style="color: var(--gold); font-size: 1.25rem; display: block;" id="user-tier-badge">Silver Tier (1.25x)</strong>
+            </div>
+            <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--gaine-border); border-radius: var(--r-sm); padding: 1.25rem;">
+              <span style="font-size: 0.75rem; color: rgba(232,240,220,0.6); display: block; margin-bottom: 0.375rem;">Allocated Airdrop</span>
+              <strong style="color: #22c55e; font-size: 1.25rem; display: block;" id="user-claim-amount">1,250 GAINE</strong>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-gold btn-lg" id="claim-airdrop-btn" style="width: 100%; max-width: 24rem;">Claim Season 1 Airdrop Now</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TIER BREAKDOWN GRID (BRONZE TO DIAMOND) -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 3rem;">
+        <span class="section-label" style="color: var(--gaine-accent);">Tier Multipliers</span>
+        <h2 style="color: var(--gaine-text);">Airdrop Reward Tiers</h2>
+        <p style="color: rgba(232,240,220,0.7); max-width: 36rem; margin: 0 auto;">Higher holding tiers unlock enhanced reward multipliers and governance privileges.</p>
+      </div>
+
+      <div class="grid-4" style="gap: 1.5rem;">
+
+        <!-- BRONZE -->
+        <div class="card fade-up" style="background: rgba(13,31,23,0.8); border: 1px solid var(--gaine-border); color: var(--gaine-text); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <span class="badge" style="background: rgba(205, 127, 50, 0.2); color: #cd7f32; border: 1px solid #cd7f32;">BRONZE TIER</span>
+              <span style="font-weight: 700; color: var(--gaine-accent);">1.0x</span>
+            </div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--gaine-text);">100 – 999 GAINE</h3>
+            <p style="font-size: 0.875rem; color: rgba(232,240,220,0.7); margin-bottom: 1.25rem; line-height: 1.6;">
+              Base tier for community participants holding minimum quorum tokens.
+            </p>
+            <ul style="font-size: 0.8125rem; color: rgba(232,240,220,0.8); padding-left: 1.25rem; margin-bottom: 1.25rem; line-height: 1.8;">
+              <li>On-chain governance voting</li>
+              <li>Discord / Telegram community role</li>
+              <li>Base airdrop pool eligibility</li>
+            </ul>
+          </div>
+          <div style="font-size: 0.75rem; color: rgba(232,240,220,0.5); text-align: center;">Min Quorum Qualified</div>
+        </div>
+
+        <!-- SILVER -->
+        <div class="card fade-up" style="background: rgba(13,31,23,0.8); border: 1px solid var(--gaine-border); color: var(--gaine-text); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <span class="badge" style="background: rgba(192, 192, 192, 0.2); color: #c0c0c0; border: 1px solid #c0c0c0;">SILVER TIER</span>
+              <span style="font-weight: 700; color: var(--gaine-accent);">1.25x</span>
+            </div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--gaine-text);">1,000 – 4,999 GAINE</h3>
+            <p style="font-size: 0.875rem; color: rgba(232,240,220,0.7); margin-bottom: 1.25rem; line-height: 1.6;">
+              Active ecosystem supporters with elevated reward distribution.
+            </p>
+            <ul style="font-size: 0.8125rem; color: rgba(232,240,220,0.8); padding-left: 1.25rem; margin-bottom: 1.25rem; line-height: 1.8;">
+              <li>All Bronze perks</li>
+              <li>Priority retreat booking access</li>
+              <li>5% discount at certified centers</li>
+            </ul>
+          </div>
+          <div style="font-size: 0.75rem; color: rgba(232,240,220,0.5); text-align: center;">1.25x Yield Boost</div>
+        </div>
+
+        <!-- GOLD -->
+        <div class="card fade-up" style="background: rgba(13,31,23,0.8); border: 1px solid var(--gold); color: var(--gaine-text); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <span class="badge" style="background: rgba(200, 168, 75, 0.2); color: var(--gold); border: 1px solid var(--gold);">GOLD TIER</span>
+              <span style="font-weight: 700; color: var(--gold);">1.5x</span>
+            </div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--gaine-text);">5,000 – 24,999 GAINE</h3>
+            <p style="font-size: 0.875rem; color: rgba(232,240,220,0.7); margin-bottom: 1.25rem; line-height: 1.6;">
+              Core platform stewards with proposal creation rights.
+            </p>
+            <ul style="font-size: 0.8125rem; color: rgba(232,240,220,0.8); padding-left: 1.25rem; margin-bottom: 1.25rem; line-height: 1.8;">
+              <li>All Silver perks</li>
+              <li>DAO proposal submission rights</li>
+              <li>Full pharma spec sheet access</li>
+            </ul>
+          </div>
+          <div style="font-size: 0.75rem; color: var(--gold); text-align: center;">Proposal Creation Unlocked</div>
+        </div>
+
+        <!-- DIAMOND -->
+        <div class="card fade-up" style="background: rgba(13,31,23,0.8); border: 1.5px solid var(--gaine-accent); color: var(--gaine-text); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <span class="badge" style="background: rgba(168, 201, 106, 0.2); color: var(--gaine-accent); border: 1px solid var(--gaine-accent);">DIAMOND TIER</span>
+              <span style="font-weight: 700; color: var(--gaine-accent);">2.0x</span>
+            </div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--gaine-text);">25,000+ GAINE</h3>
+            <p style="font-size: 0.875rem; color: rgba(232,240,220,0.7); margin-bottom: 1.25rem; line-height: 1.6;">
+              Institutional & council leaders with maximum reward multiplier.
+            </p>
+            <ul style="font-size: 0.8125rem; color: rgba(232,240,220,0.8); padding-left: 1.25rem; margin-bottom: 1.25rem; line-height: 1.8;">
+              <li>All Gold perks</li>
+              <li>Gabon Conservation Advisory Seat</li>
+              <li>Multi-sig governance veto power</li>
+            </ul>
+          </div>
+          <div style="font-size: 0.75rem; color: var(--gaine-accent); text-align: center;">2.0x Maximum Multiplier</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GABON BENEFIT-SHARING & LEGAL DISCLAIMER -->
+  <section class="section">
+    <div class="container" style="max-width: 48rem;">
+      <div style="background: rgba(13, 31, 23, 0.9); border: 1px solid var(--gaine-border); border-radius: var(--r-md); padding: 2rem; color: var(--gaine-text);">
+        <h3 style="color: var(--gaine-accent); margin-bottom: 0.875rem; text-align: center;">Gabon Decree 0239 & Benefit-Sharing Reciprocity</h3>
+        <p style="font-size: 0.875rem; color: rgba(232,240,220,0.8); line-height: 1.6; margin-bottom: 1.25rem;">
+          The GAINE token model is explicitly anchored in Gabonese Decree 0239/PR/MEF and the UN Nagoya Protocol. 25% of all platform transaction fees and token distributions are systematically reserved for the Gabon Sacred Flora Conservation Fund to support indigenous Bwiti harvesters and Lopé National Park reforestation.
+        </p>
+        <p style="font-size: 0.8125rem; color: rgba(232,240,220,0.5); line-height: 1.5; margin: 0; text-align: center; border-top: 1px solid var(--gaine-border); padding-top: 1rem;">
+          <strong>Legal Disclaimer:</strong> GAINE is a philanthropic utility token. Airdrop distributions are non-investment rewards intended for platform governance and service settlement. GAINE tokens confer no ownership, equity, or profit-sharing rights. Must be 21+ to participate.
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h2>ibogaine<span>.</span>dao</h2>
+        <p>Ethical Iboga sourcing. Tokenized reciprocity. Rooted in Gabon. Building a positive legacy for humanity through clinically-validated, ethically-anchored knowledge.</p>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+          <a href="https://t.me/flextokens" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="font-size:0.6875rem;">Join on Telegram →</a>
+          <a href="https://jup.ag/tokens/ibozy4AxS6TdsBDerGJN1ZKFFohEubFdHWGcyLxPLFL" target="_blank" rel="noopener noreferrer" class="btn btn-gold-outline btn-sm" style="font-size:0.6875rem;display:inline-flex;align-items:center;gap:0.375rem;">
+            <img src="https://raw.githubusercontent.com/dougbutner/Bridged-EASY-Contracts/refs/heads/main/GAINE-token.png" alt="" width="14" height="14" style="width:14px;height:14px;border-radius:50%;" />
+            Buy GAINE
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Knowledge</h4>
+        <ul>
+          <li><a href="../learn.html">Knowledge Base</a></li>
+          <li><a href="research.html">Clinical Research</a></li>
+          <li><a href="news.html">News Feed</a></li>
+          <li><a href="../learn.html#tradition">Tradition</a></li>
+          <li><a href="../learn.html#conservation">Conservation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="../gaine.html">GAINE Token</a></li>
+          <li><a href="dao.html">DAO Governance</a></li>
+          <li><a href="retreat.html">Retreat Registry</a></li>
+          <li><a href="nft.html">NFT Credentials</a></li>
+          <li><a href="pharma.html">Pharma Partners</a></li>
+          <li><a href="airdrop.html">Airdrop</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-disclaimer">
+        <strong>Important:</strong> GAINE is a philanthropic utility token for use exclusively on the ibogaine.dao platform (settlement, rewards, and platform services). It is not an investment, security, or financial product. There is no expectation of return or profit. Ibogaine and iboga carry serious health risks and are illegal in many jurisdictions. Nothing here constitutes medical, legal, therapeutic, or investment advice. You must be 21+ to use this platform. Committed to Gabon Decree 0239 & Nagoya Protocol.
+      </p>
+      <div class="footer-legal">
+        <a href="#">Gabon Decree 0239</a>
+        <a href="https://www.cbd.int/abs/" target="_blank" rel="noopener noreferrer">Nagoya Protocol</a>
+        <a href="../gaine.html" style="color:var(--gold);">Official GAINE Token</a>
+        <a href="https://solscan.io/token/ibozy4AxS6TdsBDerGJN1ZKFFohEubFdHWGcyLxPLFL" target="_blank" rel="noopener noreferrer">Solscan</a>
+        <span>© 2026 IBOGAINE DAO — All rights reserved</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script src="../js/wallet.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const claimBtn = document.getElementById('claim-airdrop-btn');
+    claimBtn?.addEventListener('click', () => {
+      window.showToast?.('Season 1 Airdrop claimed successfully! Tokens routed to your wallet.', 'success');
+      claimBtn.disabled = true;
+      claimBtn.textContent = 'Airdrop Claimed ✓';
+    });
+  });
+</script>
+</body>
+</html>
